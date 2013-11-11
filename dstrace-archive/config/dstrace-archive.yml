@@ -1,0 +1,24 @@
+appName: "D-S-Trace Archiver"
+
+jMetricConfig:
+  archivalEngineClass: "nitinka.jmetrics.archive.RRD4JArchivingEngine"
+  configParams:
+    basePath: "/var/log/dstrace-archiver/systemStats"
+
+redisConsumerConfig:
+  redisHost: "localhost"
+  redisPort: 6379
+  channels: ["test1"]
+
+eventArchiveConfig:
+  archiverClass: "nitinka.dstrace.archive.ElasticSearchEventArchiver"
+  archiverConfig:
+    elasticSearchUrl: "http://localhost:9200"
+    eventIndex: "trace"
+    eventType: "event"
+  archiverThreads: 10
+
+http:
+  port: 9999
+  adminPort: 9991
+  rootPath: "/dstrace-archive/*"
