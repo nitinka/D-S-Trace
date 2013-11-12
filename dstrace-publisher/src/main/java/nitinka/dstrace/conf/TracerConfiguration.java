@@ -1,19 +1,14 @@
 package nitinka.dstrace.conf;
 
-import nitinka.dstrace.util.ObjectMapperUtil;
-import org.codehaus.jackson.JsonGenerationException;
-
-import java.io.IOException;
-
 /**
  * User: NitinK.Agarwal@yahoo.com
  * Configuration required to initialize Tracer
  */
 public class TracerConfiguration {
     private boolean enabled = false;
-    private String instanceId;
+    private String host;
     private String businessUnit;
-    private String appName;
+    private String application;
     private int samplePercentage;
     private int eventQueueSize = 100000;
 
@@ -28,12 +23,12 @@ public class TracerConfiguration {
         return this;
     }
 
-    public String getInstanceId() {
-        return instanceId;
+    public String getHost() {
+        return host;
     }
 
-    public TracerConfiguration setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+    public TracerConfiguration setHost(String host) {
+        this.host = host;
         return this;
     }
 
@@ -46,12 +41,12 @@ public class TracerConfiguration {
         return this;
     }
 
-    public String getAppName() {
-        return appName;
+    public String getApplication() {
+        return application;
     }
 
-    public TracerConfiguration setAppName(String appName) {
-        this.appName = appName;
+    public TracerConfiguration setApplication(String application) {
+        this.application = application;
         return this;
     }
     public int getEventQueueSize() {

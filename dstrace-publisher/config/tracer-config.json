@@ -1,8 +1,8 @@
 {
   "enabled" : true,
-  "instanceId" : "localhost",
+  "host" : "localhost",
   "businessUnit" : "bu1",
-  "appName" : "app1",
+  "application" : "app1",
   "samplePercentage" : 100,
   "eventQueueSize" : 100000,
   "publishConfiguration" : {

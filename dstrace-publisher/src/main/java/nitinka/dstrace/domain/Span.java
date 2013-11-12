@@ -11,6 +11,7 @@ public class Span {
     private String name;
     private String parentSpanId;
     private Map<String, Object> tags;
+
     public Span() {
         this.tags = new HashMap<String, Object>();
     }
