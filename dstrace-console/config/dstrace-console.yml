@@ -1,0 +1,18 @@
+appName: "D-S-Trace Console"
+
+jMetricConfig:
+  archivalEngineClass: "nitinka.jmetrics.archive.RRD4JArchivingEngine"
+  configParams:
+    basePath: "/var/log/dstrace-console/systemStats"
+
+eventFetchConfig:
+  fetchClientClass: "nitinka.dstrace.fetch.ElasticSearchFetchClient"
+  fetchConfig:
+    elasticSearchUrl: "http://localhost:9200"
+    eventIndex: "trace"
+    eventType: "event"
+
+http:
+  port: 8888
+  adminPort: 8881
+  rootPath: "/dstrace-console/*"

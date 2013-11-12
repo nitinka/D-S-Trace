@@ -19,6 +19,7 @@
     <modules>
         <module>dstrace-publisher</module>
         <module>dstrace-archive</module>
+        <module>dstrace-console</module>
     </modules>
     <build>
         <pluginManagement>

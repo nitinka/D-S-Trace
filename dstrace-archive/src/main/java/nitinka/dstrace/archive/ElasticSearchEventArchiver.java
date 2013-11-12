@@ -39,9 +39,11 @@ public class ElasticSearchEventArchiver extends AbstractEventArchiver {
 
     @Override
     public void archive(String events) throws IOException, ExecutionException, InterruptedException {
+        logger.info("Archiving Events");
+        logger.info(events);
         List<Map> eventList = objectMapper.readValue(events, List.class);
         for(Map event : eventList) {
-            String id = ((Map)event.get("header")).get("eventId").toString();
+            String id = event.get("eventId").toString();
             String url = this.elasticSearchUrl
                     + "/"
                     + index

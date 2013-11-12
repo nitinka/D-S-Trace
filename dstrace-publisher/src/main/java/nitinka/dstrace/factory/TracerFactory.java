@@ -30,7 +30,7 @@ public class TracerFactory {
         return new Event().
                 setBusinessUnit(Tracer.getTracerConfiguration().getBusinessUnit()).
                 setOperation(span.getName()).
-                setTraceId(UUID.randomUUID().toString()).
+                setEventId(UUID.randomUUID().toString()).
                 setTraceId(Tracer.getCurrentTraceId()).
                 setHost(Tracer.getTracerConfiguration().getHost()).
                 setApplication(Tracer.getTracerConfiguration().getApplication()).
