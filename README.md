@@ -10,4 +10,4 @@ With D-S-Trace I intent to provide distributed tracing platform which can setup 
 * <b>3) dstrace-console</b> : Set of rest end points and UI to search, relate and visualize distributed traces.
 <br>
 <br>
-<b>Deployment (TBD)</b>
+![Alt Image](https://github.com/nitinka/D-S-Trace/raw/master/images/dstrace.png)
