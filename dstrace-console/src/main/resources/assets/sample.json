@@ -1,0 +1,41 @@
+{
+    "name": "span1",
+    "startTime" : 1380094085000,
+    "endTime" :   1380094086000,
+    "children": [
+        {
+            "name": "span2",
+            "startTime" : 1380094085100,
+            "endTime" :   1380094085200,
+            "children": [
+                {
+                    "name": "span3",
+                    "startTime" : 1380094085300,
+                    "endTime" :   1380094085400,
+                    "children": [
+                        {
+                            "name": "span4",
+                            "startTime" : 1380094085500,
+                            "endTime" :   1380094085600
+                        },
+                        {
+                            "name": "span5",
+                            "startTime" : 1380094085600,
+                            "endTime" :   1380094085700
+                        },
+                        {
+                            "name": "span6",
+                            "startTime" : 1380094085700,
+                            "endTime" :   1380094085800
+                        },
+                        {
+                            "name": "span7",
+                            "startTime" : 1380094085800,
+                            "endTime" :   1380094085900
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

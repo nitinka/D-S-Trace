@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script type="text/javascript" src="js/d3.v2.js"></script>
+    <!--<script type="text/javascript" src="http://mbostock.github.com/d3/d3.layout.js?1.27.2"></script>-->
+    <style type="text/css">
+
+        .node rect {
+            cursor: pointer;
+            fill: #fff;
+            fill-opacity: .5;
+            stroke: #3182bd;
+            stroke-width: 1.5px;
+        }
+
+        .node text {
+            font: 10px sans-serif;
+            pointer-events: none;
+        }
+
+        path.link {
+            fill: none;
+            stroke: #9ecae1;
+            stroke-width: 1.5px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="chart"></div>
+<script type="text/javascript">
+
+    var w = 1200,
+            h = 10000,
+            i = 0,
+            barHeight = 20,
+            barWidth = w * 0.7,
+            duration = 400,
+            root;
+    var tree = d3.layout.tree()
+            .size([h, 100]);
+
+    var diagonal = d3.svg.diagonal()
+            .projection(function(d) { return [d.y, d.x]; });
+
+    var vis = d3.select("#chart").append("svg:svg")
+            .attr("width", w)
+            .attr("height", h)
+            .append("svg:g")
+            .attr("transform", "translate(20,30)");
+
+    var trace;
+
+    //TXN-26d68f3c-579b-4904-80f1-1070464df114
+    //stage-hyperion-api.digital.ch.flipkart.com:8401
+    d3.json("/dstrace-console/traces/"+getQueryParams("traceId"), function(traceJson) {
+        function buildTreeSpan(traceSpan, parentApplication) {
+            h += barHeight;
+            var treeSpan = {};
+            treeSpan["name"] = traceSpan.spanName;
+            treeSpan["startTime"] = traceSpan.events[0].timestamp;
+            treeSpan["endTime"] = traceSpan.events[traceSpan.events.length-1].timestamp;
+            treeSpan["application"] = traceSpan.events[0].application;
+            treeSpan["parentApplication"] = parentApplication;
+            if(traceSpan.childSpans) {
+                treeSpan["children"] = [];
+                for(var childSpanId in traceSpan.childSpans) {
+                    var childSpan = traceSpan.childSpans[childSpanId];
+                    treeSpan["children"].push(buildTreeSpan(childSpan, treeSpan["application"]));
+                }
+            }
+            return treeSpan;
+        }
+
+        function convert(traceJson) {
+            console.log(traceJson);
+            trace = traceJson;//traceJson["trace"];
+            var treeSpan = {"application" : "scp", "name" : "root", "startTime" : trace.startTime, "endTime" : trace.endTime};
+            treeSpan["children"] = [];
+            if(trace) {
+                var traceSpans = trace["spans"];
+                for (var spanId in traceSpans){
+                    var traceSpan = traceSpans[spanId];
+                    treeSpan.children.push(buildTreeSpan(traceSpan, null));
+                }
+            }
+            return treeSpan;
+        }
+
+        var treeSpan = convert(traceJson);
+        treeSpan.x0 = 0;
+        treeSpan.y0 = 0;
+        update(root = treeSpan);
+    });
+
+    function update(source) {
+
+        // Compute the flattened node list. TODO use d3.layout.hierarchy.
+        var nodes = tree.nodes(root);
+
+        // Compute the "layout".
+        nodes.forEach(function(n, i) {
+            n.x = i * barHeight;
+        });
+
+        // Update the nodes. Adding id
+        var node = vis.selectAll("g.node")
+                .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+        var nodeEnter = node.enter().append("svg:g")
+                .attr("class", "node")
+                .attr("transform", function(d) {
+                    return "translate(" + source.y0 + "," + source.x0 + ")";
+                })
+                .style("opacity", 1e-6);
+
+        // Enter any new nodes at the parent's previous position.
+        // TBD Following code doesn't take care about the x position of the node. Which should be determind based on when the actual operation started
+
+        nodeEnter.append("svg:rect")
+                .attr("y", -barHeight / 2)
+                .attr("x", function(d) {
+                    var startTimeDiff = d.startTime - trace.startTime;
+                    var xAxis = Math.round((barWidth  / trace.durationMS)*(startTimeDiff));
+                    return xAxis;
+                } )
+                .attr("height", barHeight)
+                .attr("width", function(d) {
+                    var width = Math.round((barWidth  / trace.durationMS)*(d.endTime - d.startTime));
+                    return width + 30; // Making sure minimum width is still looking good
+                } )
+                .style("fill", color)
+                .on("click", click)
+                .on("mouseover", "Something");
+//
+//        on("mouseover",function(d){ show_data(d);})
+
+        nodeEnter.append("svg:text")
+                .attr("y", 3.5)
+                .attr("x", function(d) {
+                    var startTimeDiff = d.startTime - trace.startTime;
+                    var xAxis = Math.round((barWidth  / trace.durationMS)*(startTimeDiff));
+                    return xAxis + 5;
+                })
+                .text(function(d) {
+                    var spanDuration = d.endTime - d.startTime;
+                    return d.application +", " + d.name + ", " + spanDuration+ "ms" + ", "+d.parentApplication;
+                });
+
+        // Transition nodes to their new position.
+        nodeEnter.transition()
+                .duration(duration)
+                .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+                .style("opacity", 1);
+
+        node.transition()
+                .duration(duration)
+                .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+                .style("opacity", 1)
+                .select("rect")
+                .style("fill", color);
+
+        // Transition exiting nodes to the parent's new position.
+        node.exit().transition()
+                .duration(duration)
+                .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+                .style("opacity", 1e-6)
+                .remove();
+
+        // Update the links…
+/*
+        var link = vis.selectAll("path.link")
+                .data(tree.links(nodes), function(d) { return d.target.id; });
+
+        // Enter any new links at the parent's previous position.
+        link.enter().insert("svg:path", "g")
+                .attr("class", "link")
+                .attr("d", function(d) {
+                    var o = {x: source.x0, y: source.y0};
+                    return diagonal({source: o, target: o});
+                })
+                .transition()
+                .duration(duration)
+                .attr("d", diagonal);
+
+        // Transition links to their new position.
+        link.transition()
+                .duration(duration)
+                .attr("d", diagonal);
+
+        // Transition exiting nodes to the parent's new position.
+        link.exit().transition()
+                .duration(duration)
+                .attr("d", function(d) {
+                    var o = {x: source.x, y: source.y};
+                    return diagonal({source: o, target: o});
+                })
+                .remove();
+
+        // Stash the old positions for transition.
+        nodes.forEach(function(d) {
+            d.x0 = d.x;
+            d.y0 = d.y;
+        });
+*/
+    }
+
+    // Toggle children on click.
+    function click(d) {
+        if (d.children) {
+            d._children = d.children;
+            d.children = null;
+        } else {
+            d.children = d._children;
+            d._children = null;
+        }
+        update(d);
+    }
+
+    function color(d) {
+        return d._children ? "#3182bd" : d.children ? "#c6dbef" : "#fd8d3c";
+    }
+
+
+    function getQueryParams(sParam){
+        var queryString = window.location.search.substring(1);
+        var queryParams = queryString.split('&');
+        for (var i = 0; i < queryParams.length; i++){
+            var sParameterName = queryParams[i].split('=');
+            if (sParameterName[0] == sParam){
+                return sParameterName[1];
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

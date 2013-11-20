@@ -12,6 +12,7 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import sun.security.pkcs11.wrapper.CK_LOCKMUTEX;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -319,10 +320,25 @@ public class Tracer {
         Tracer.initialize(configuration);
         Tracer.setCurrentTraceId(UUID.randomUUID().toString());
         Tracer.startSpan("span1",null, null);
-        Tracer.startSpan("span1.2",null, null);
+        Thread.sleep(1000);
+        Tracer.startSpan("span1.1", null, null);
+        Thread.sleep(1000);
+        Tracer.startSpan("span1.1.1", null, null);
+        Thread.sleep(1000);
+        Tracer.startSpan("span1.1.1.1", null, null);
+        Thread.sleep(1000);
+        Tracer.startSpan("span1.1.1.1.1", null, null);
+        Thread.sleep(1000);
         Tracer.endSpan();
+        Thread.sleep(1000);
         Tracer.endSpan();
-        Thread.sleep(5000);
+        Thread.sleep(1000);
+        Tracer.endSpan();
+        Thread.sleep(1000);
+        Tracer.endSpan();
+        Thread.sleep(1000);
+        Tracer.endSpan();
+        Thread.sleep(20000);
         Tracer.stop();
     }
 }

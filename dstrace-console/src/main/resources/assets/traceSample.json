@@ -1,0 +1,104 @@
+{
+    "trace": {
+        "traceId": "t2",
+        "startTime": 1380023477374,
+        "endTime": 1380023477411,
+        "durationMS": 37,
+        "firstspanId": "62a0cd55-daf1-4022-9ecf-2465b06809ca",
+        "lastSpanId": "62a0cd55-daf1-4022-9ecf-2465b06809ca",
+        "spans": {
+            "62a0cd55-daf1-4022-9ecf-2465b06809ca": {
+                "spanId": "62a0cd55-daf1-4022-9ecf-2465b06809ca",
+                "spanName": "/names2/{name}",
+                "events": [
+                    {
+                        "header": {
+                            "appName": "scp",
+                            "configName": "/names2/{name}",
+                            "profile": "oms",
+                            "instanceId": "localhost:0000",
+                            "eventId": "30e00734-5440-464d-9a2f-1d886cc03049",
+                            "timestamp": 1380023477374
+                        },
+                        "data": {
+                            "tags": {
+                                "name": "hello2"
+                            },
+                            "spanId": "62a0cd55-daf1-4022-9ecf-2465b06809ca",
+                            "traceId": "t2",
+                            "eventName": "Start",
+                            "parentSpanId": null
+                        }
+                    },
+                    {
+                        "header": {
+                            "appName": "scp",
+                            "configName": "/names2/{name}",
+                            "profile": "oms",
+                            "instanceId": "localhost:0000",
+                            "eventId": "6e380fb9-2a9f-4e56-8d50-69c29d9439b8",
+                            "timestamp": 1380023477411
+                        },
+                        "data": {
+                            "tags": {
+                                "name": "hello2"
+                            },
+                            "spanId": "62a0cd55-daf1-4022-9ecf-2465b06809ca",
+                            "traceId": "t2",
+                            "eventName": "End",
+                            "parentSpanId": null
+                        }
+                    }
+                ],
+                "childSpans": {
+                    "5b9d6225-b9c7-4d41-89d4-28d158318dfa": {
+                        "spanId": "5b9d6225-b9c7-4d41-89d4-28d158318dfa",
+                        "spanName": "/names3/{name}",
+                        "events": [
+                            {
+                                "header": {
+                                    "appName": "scp",
+                                    "configName": "/names3/{name}",
+                                    "profile": "oms",
+                                    "instanceId": "localhost:0000",
+                                    "eventId": "bdf3c2da-28bd-4505-840c-8209e023cb9e",
+                                    "timestamp": 1380023477400
+                                },
+                                "data": {
+                                    "tags": {
+                                        "name": "name3"
+                                    },
+                                    "spanId": "5b9d6225-b9c7-4d41-89d4-28d158318dfa",
+                                    "traceId": "t2",
+                                    "eventName": "Start",
+                                    "parentSpanId": "62a0cd55-daf1-4022-9ecf-2465b06809ca"
+                                }
+                            },
+                            {
+                                "header": {
+                                    "appName": "scp",
+                                    "configName": "/names3/{name}",
+                                    "profile": "oms",
+                                    "instanceId": "localhost:0000",
+                                    "eventId": "968c78ae-11ad-4183-9d49-d35c5ee30c16",
+                                    "timestamp": 1380023477402
+                                },
+                                "data": {
+                                    "tags": {
+                                        "name": "name3"
+                                    },
+                                    "spanId": "5b9d6225-b9c7-4d41-89d4-28d158318dfa",
+                                    "traceId": "t2",
+                                    "eventName": "End",
+                                    "parentSpanId": "62a0cd55-daf1-4022-9ecf-2465b06809ca"
+                                }
+                            }
+                        ],
+                        "duration": 2
+                    }
+                },
+                "duration": 37
+            }
+        }
+    }
+}
