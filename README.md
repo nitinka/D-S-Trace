@@ -11,3 +11,26 @@ With D-S-Trace I intent to provide distributed tracing platform which can setup 
 <br>
 <br>
 ![Alt Image](https://github.com/nitinka/D-S-Trace/raw/master/images/dstrace.png)
+<br><br>
+<b>Deployment</b>
+* <b>1) Install Redis</b>: Follow http://redis.io/topics/quickstart
+* <b>2) Install elasticsearch</b>:
+<pre>
+1) Download elastic Search : https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.7.zip
+2) unzip
+3) cd bin
+4) ./elasticsearch -f
+</pre>
+* <b>3) Install D-S-Trace Services </b>:
+<pre>
+1) git clone https://github.com/nitinka/D-S-Trace.git 
+2) cd D-S-Trace
+3) mvn clean compile package
+4) cd dstrace-archive
+5) mvn exec:java
+6) Open another console
+7) cd dstrace-console
+8) mvn exec:java
+</pre>
+* <b>4) Done</b>
+
