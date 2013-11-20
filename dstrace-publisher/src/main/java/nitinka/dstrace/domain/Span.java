@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class Span {
     private String spanId;
-    private String name;
+    private String spanName;
     private String parentSpanId;
     private Map<String, Object> tags;
 
@@ -31,12 +31,12 @@ public class Span {
         return this;
     }
 
-    public String getName() {
-        return name;
+    public String getSpanName() {
+        return spanName;
     }
 
-    public Span setName(String name) {
-        this.name = name;
+    public Span setSpanName(String spanName) {
+        this.spanName = spanName;
         return this;
     }
 

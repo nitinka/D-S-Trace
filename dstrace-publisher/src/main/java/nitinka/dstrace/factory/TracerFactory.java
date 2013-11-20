@@ -22,14 +22,14 @@ public class TracerFactory {
         return new Span().
                 setSpanId(UUID.randomUUID().toString()).
                 setParentSpanId(parentSpanId).
-                setName(spanName).
+                setSpanName(spanName).
                 addTags(tags);
     }
 
     public static Event buildEvent(Span span, String eventName, long eventTime) {
         return new Event().
                 setBusinessUnit(Tracer.getTracerConfiguration().getBusinessUnit()).
-                setOperation(span.getName()).
+                setSpanName(span.getSpanName()).
                 setEventId(UUID.randomUUID().toString()).
                 setTraceId(Tracer.getCurrentTraceId()).
                 setHost(Tracer.getTracerConfiguration().getHost()).

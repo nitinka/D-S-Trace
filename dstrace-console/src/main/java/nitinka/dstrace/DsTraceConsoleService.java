@@ -10,6 +10,8 @@ import com.yammer.dropwizard.config.Environment;
 import nitinka.dstrace.config.DsTraceConsoleConfiguration;
 import nitinka.dstrace.resource.EventResource;
 import nitinka.dstrace.fetch.AbstractFetchClient;
+import nitinka.dstrace.resource.SpanResource;
+import nitinka.dstrace.resource.TraceResource;
 import nitinka.jmetrics.JMetric;
 import nitinka.jmetrics.controller.dropwizard.JMetricController;
 
@@ -27,11 +29,14 @@ public class DsTraceConsoleService extends Service<DsTraceConsoleConfiguration> 
         JMetric.initialize(configuration.getjMetricConfig());
         environment.addResource(new JMetricController());
         environment.addResource(new EventResource(AbstractFetchClient.build(configuration.getEventFetchConfig())));
+        environment.addResource(new SpanResource(AbstractFetchClient.build(configuration.getEventFetchConfig())));
+        environment.addResource(new TraceResource(AbstractFetchClient.build(configuration.getEventFetchConfig())));
     }
 
     public static void main(String[] args) throws Exception {
         args = new String[]{"server",args[0]};
         new DsTraceConsoleService().run(args);
     }
-
 }
+
+

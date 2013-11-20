@@ -33,15 +33,19 @@ public class EventResource {
     @Path("/{eventId}")
     @Timed
     public Event getEvent(@PathParam("eventId") String eventId) throws InterruptedException, ExecutionException, IOException {
-        return fetchClient.getEvent(eventId);
+        Event event = fetchClient.getEvent(eventId);
+        if(event == null)
+            throw new WebApplicationException(ResponseBuilder.resourceNotFound("Event", eventId));
+        return event;
     }
 
+/*
     @Produces(MediaType.APPLICATION_JSON)
     @GET
     @Timed
-    public List<Event> getEvents(@Context HttpServletRequest request) {
+    public List<Event> getEvents(@Context HttpServletRequest request) throws IOException {
         Map<String, String> queryParameters = parseQueryParameters(request);
-        int pageNo = 1;
+        int pageNo = 0;
         if(queryParameters.containsKey("pageNo")) {
             pageNo = Integer.parseInt(queryParameters.remove("pageNo"));
         }
@@ -59,6 +63,7 @@ public class EventResource {
 
         throw new WebApplicationException(ResponseBuilder.badRequest("No Search Query Parameters"));
     }
+*/
 
     private Map<String, String> parseQueryParameters(HttpServletRequest request) {
         Map<String, String> queryParameters = null;

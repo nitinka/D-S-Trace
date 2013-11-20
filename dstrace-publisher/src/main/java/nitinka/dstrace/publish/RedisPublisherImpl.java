@@ -28,7 +28,7 @@ public class RedisPublisherImpl extends AbstractEventPublisher {
 
     @Override
     public void publish(List<Event> events) throws IOException {
-        logger.info("Publishing Events :"+events);
+        logger.info("Publishing Events :"+objectMapper.writeValueAsString(events));
         jedis.publish(this.channel, objectMapper.writeValueAsString(events));
     }
 

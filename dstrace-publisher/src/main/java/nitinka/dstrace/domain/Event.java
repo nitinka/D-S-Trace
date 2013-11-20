@@ -12,7 +12,7 @@ import java.util.Map;
    "businessUnit" : "scp",
    "application" : "oms-b2c",
    "host" :  "127.0.0.1",
-   "operation" : "addPayment",
+   "spanName" : "addPayment",
    "eventName" : "Started",
    "timestamp" : 1377842142000,
    "tags": {
@@ -25,7 +25,7 @@ public class Event {
     private String businessUnit;
     private String application;
     private String host;
-    private String operation;
+    private String spanName;
     private String traceId;
     private String eventId;
     private String spanId;
@@ -47,12 +47,12 @@ public class Event {
         return this;
     }
 
-    public String getOperation() {
-        return operation;
+    public String getSpanName() {
+        return spanName;
     }
 
-    public Event setOperation(String operation) {
-        this.operation = operation;
+    public Event setSpanName(String spanName) {
+        this.spanName = spanName;
         return this;
     }
 

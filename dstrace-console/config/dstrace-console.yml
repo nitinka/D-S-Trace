@@ -8,7 +8,8 @@ jMetricConfig:
 eventFetchConfig:
   fetchClientClass: "nitinka.dstrace.fetch.ElasticSearchFetchClient"
   fetchConfig:
-    elasticSearchUrl: "http://localhost:9200"
+    elasticSearchHosts:
+      - "localhost:9300"
     eventIndex: "trace"
     eventType: "event"
 

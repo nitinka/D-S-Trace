@@ -3,6 +3,7 @@ package nitinka.dstrace.fetch;
 import nitinka.dstrace.config.EventFetchConfig;
 import nitinka.dstrace.domain.Event;
 import nitinka.dstrace.domain.Span;
+import nitinka.dstrace.domain.Trace;
 import nitinka.dstrace.util.ClassHelper;
 
 import java.io.IOException;
@@ -26,14 +27,16 @@ abstract public class AbstractFetchClient {
     }
 
     abstract public Event getEvent(String eventId) throws IOException, ExecutionException, InterruptedException;
-    abstract public Span getSpanByEventId(String eventId);
+    abstract public Span getSpanByEventId(String eventId) throws InterruptedException, ExecutionException, IOException;
     abstract public Span getTraceByEventID(String eventId);
-    abstract public Span getTrace(String traceId);
+    abstract public Trace getTrace(String traceId) throws IOException;
     abstract public void close();
 
     public static AbstractFetchClient build(EventFetchConfig config) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         return ClassHelper.getClassInstance(config.getFetchClientClass(), new Class[]{Map.class}, new Object[]{config.getFetchConfig()}, AbstractFetchClient.class);
     }
 
-    public abstract List<Event> searchEvents(Map<String, String> queryParameters, int pageNo, int pageSize);
+    public abstract List<Event> searchEvents(int pageNo, int pageSize, String searchTerm, String... fields) throws IOException;
+
+    public abstract Span getSpan(String spanId) throws IOException;
 }

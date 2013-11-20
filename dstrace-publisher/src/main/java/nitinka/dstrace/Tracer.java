@@ -317,7 +317,10 @@ public class Tracer {
     public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, InterruptedException {
         TracerConfiguration configuration = ObjectMapperUtil.instance().readValue(new FileInputStream("./dstrace-publisher/config/tracer-config.json"), TracerConfiguration.class);
         Tracer.initialize(configuration);
+        Tracer.setCurrentTraceId(UUID.randomUUID().toString());
         Tracer.startSpan("span1",null, null);
+        Tracer.startSpan("span1.2",null, null);
+        Tracer.endSpan();
         Tracer.endSpan();
         Thread.sleep(5000);
         Tracer.stop();

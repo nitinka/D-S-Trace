@@ -1,25 +1,26 @@
 package nitinka.dstrace.fetch;
 
-import com.ning.http.client.AsyncHttpClient;
-import com.ning.http.client.Response;
 import nitinka.dstrace.domain.Event;
 import nitinka.dstrace.domain.Span;
+import nitinka.dstrace.domain.Trace;
 import nitinka.dstrace.util.ObjectMapperUtil;
-import nitinka.dstrace.util.ResponseBuilder;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.elasticsearch.action.get.GetResponse;
+import org.elasticsearch.action.search.SearchRequestBuilder;
+import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.sort.SortOrder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.WebApplicationException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 /**
  * Created with IntelliJ IDEA.
@@ -30,41 +31,67 @@ import java.util.concurrent.Future;
  */
 public class ElasticSearchFetchClient extends AbstractFetchClient {
 
-    private AsyncHttpClient httpClient;
+    private Client elasticClient ;
+
     private ObjectMapper objectMapper = ObjectMapperUtil.instance();
     private static Logger logger = LoggerFactory.getLogger(ElasticSearchFetchClient.class);
-
-    private final String elasticSearchUrl, index, type, documentTypeUrl;
+    private final String index, type;
 
     public ElasticSearchFetchClient(Map<String, Object> config) {
         super(config);
-        this.elasticSearchUrl = config.get("elasticSearchUrl").toString();
+        this.elasticClient = new TransportClient();
+
+        List<String> elasticSearchHosts = (List<String>) config.get("elasticSearchHosts");
+        for(String elasticSearchHost : elasticSearchHosts) {
+            ((TransportClient)this.elasticClient).
+                    addTransportAddress(new InetSocketTransportAddress(elasticSearchHost.split(":")[0],
+                            Integer.parseInt(elasticSearchHost.split(":")[1])));
+        }
+
         this.index = config.get("eventIndex").toString();
         this.type = config.get("eventType").toString();
-        this.documentTypeUrl = this.elasticSearchUrl
-                + "/"
-                + index
-                + "/"
-                + type;
-        httpClient = new AsyncHttpClient();
     }
 
     @Override
     public Event getEvent(String eventId) throws IOException, ExecutionException, InterruptedException {
-        String url = this.documentTypeUrl + "/" + eventId + "/_source";
-        AsyncHttpClient.BoundRequestBuilder builder = httpClient.prepareGet(url);
-        Future<Response> f = builder.execute();
-        Response response = f.get();
+        GetResponse response = elasticClient.prepareGet(index, type, eventId)
+                .execute()
+                .actionGet();
 
-        if(response.getStatusCode() == 200) {
-            return objectMapper.readValue(response.getResponseBodyAsBytes(), Event.class);
-        }
+        if(response.getSource() != null)
+            return objectMapper.readValue(response.getSourceAsBytes(), Event.class);
         return null;
     }
 
     @Override
-    public Span getSpanByEventId(String eventId) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    public Span getSpan(String spanId) throws IOException {
+        List<Event> spanEvents = searchEvents(0, 1000, spanId, "spanId", "parentSpanId");
+        if(spanEvents.size() > 0)
+            return Span.build(spanEvents);
+        return null;
+    }
+
+    @Override
+    public Trace getTrace(String traceId) throws IOException {
+        List<Event> traceEvents = searchEvents(0, 1000, traceId, "traceId");
+        if(traceEvents.size() > 0)
+            return Trace.build(traceEvents, traceId);
+        return null;
+    }
+
+    @Override
+    public void close() {
+        this.elasticClient.close();
+    }
+
+    @Override
+    public Span getSpanByEventId(String eventId) throws InterruptedException, ExecutionException, IOException {
+        Event event = getEvent(eventId);
+        if(event != null) {
+            String spanId = event.getSpanId();
+            return getSpan(spanId);
+        }
+        return null;
     }
 
     @Override
@@ -73,28 +100,26 @@ public class ElasticSearchFetchClient extends AbstractFetchClient {
     }
 
     @Override
-    public Span getTrace(String traceId) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    @Override
-    public void close() {
-        this.httpClient.close();
-    }
-
-    @Override
-    public List<Event> searchEvents(Map<String, String> queryParameters, int pageNo, int pageSize) {
+    public List<Event> searchEvents(int pageNo, int pageSize, String searchTerm, String... fields) throws IOException {
         List<Event> events = new ArrayList<Event>();
-//        Elastic
+        SearchRequestBuilder searchRequest = elasticClient.prepareSearch(index)
+                .setTypes(type)
+                .setSearchType(SearchType.DFS_QUERY_THEN_FETCH);
+        searchRequest.setQuery(QueryBuilders.multiMatchQuery(searchTerm, fields));
+
+        SearchResponse searchResponse = searchRequest.setFrom(pageNo * pageSize).
+                setSize(pageSize).
+                setExplain(true).
+                addSort("timestamp", SortOrder.ASC).
+                execute().
+                actionGet();
+
+        Iterator<SearchHit> searchHitIterator = searchResponse.getHits().iterator();
+        while(searchHitIterator.hasNext()) {
+            SearchHit searchHit = searchHitIterator.next();
+            events.add(objectMapper.readValue(searchHit.getSourceAsString(), Event.class));
+        }
+
         return events;
-    }
-
-    public static void main(String[] args) {
-        Client client = new TransportClient()
-                .addTransportAddress(new InetSocketTransportAddress("localhost", 9300))
-                .addTransportAddress(new InetSocketTransportAddress("localhost", 9300));
-
-
-
     }
 }
