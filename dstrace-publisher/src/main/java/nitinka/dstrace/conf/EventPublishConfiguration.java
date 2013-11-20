@@ -44,15 +44,17 @@ public class EventPublishConfiguration {
         return publisherConfig;
     }
 
-    public void setPublisherConfig(Map<String, Object> publisherConfig) {
+    public EventPublishConfiguration setPublisherConfig(Map<String, Object> publisherConfig) {
         this.publisherConfig = publisherConfig;
+        return this;
     }
 
     public String getPublisherClass() {
         return publisherClass;
     }
 
-    public void setPublisherClass(String publisherClass) {
+    public EventPublishConfiguration setPublisherClass(String publisherClass) {
         this.publisherClass = publisherClass;
+        return this;
     }
 }
