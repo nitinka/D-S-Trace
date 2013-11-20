@@ -29,6 +29,10 @@ public class Tracer {
     private static Map<Thread, String> threadTraceIds;
     private static Map<Thread, Boolean> threadSampleTrace;
     private static Map<Thread, Stack<Span>> threadSpanStacks;
+
+    private static Map<String, Span> spanMap;
+    private static Map<String, Thread> spanThreadMap;
+
     private static LinkedBlockingDeque<Event> eventsQueue;
     private static EventPublisherThread eventPublisherThread;
     private static Random rand;
@@ -44,6 +48,9 @@ public class Tracer {
         threadSpanStacks = new HashMap<Thread, Stack<Span>>();
         threadTraceIds = new HashMap<Thread, String>();
         threadSampleTrace = new HashMap<Thread, Boolean>();
+        spanMap = new HashMap<String, Span>();
+        spanThreadMap = new HashMap<String, Thread>();
+
         rand = new Random();
     }
 
@@ -85,8 +92,20 @@ public class Tracer {
      */
     public static void startSpan(String spanName, Map<String, Object> tags, String parentSpanId) {
         if(isEnabled()) {
+            startSpan(UUID.randomUUID().toString(), spanName, tags, parentSpanId);
+        }
+    }
+
+    /**
+     * Start a new span and publishes a start event
+     * @param spanName
+     * @param tags
+     * @param parentSpanId
+     */
+    public static void startSpan(String spanId, String spanName, Map<String, Object> tags, String parentSpanId) {
+        if(isEnabled()) {
             try {
-                Span span = TracerFactory.buildSpan(spanName, parentSpanId, tags);
+                Span span = TracerFactory.buildSpan(spanId, spanName, parentSpanId, tags);
                 Event event = TracerFactory.buildEvent(span, "Start", System.currentTimeMillis());
                 enqueueEvent(event);
                 pushSpan(span);
@@ -120,7 +139,32 @@ public class Tracer {
                 }
             }
             catch (Exception e) {
-                logger.error("Error in publishing evebt '"+eventName+"'", e);
+                logger.error("Error in publishing event '"+eventName+"'", e);
+            }
+        }
+    }
+
+    /**
+     * Publish event for current span
+     * It can be used to mark any point in current span
+     * @param eventName
+     * @param tags
+     */
+    public static void publishEvent(String spanId, String eventName, Map<String, Object> tags) {
+        if(isEnabled()) {
+            try {
+                Span currentSpan = getSpan(spanId);
+                if(currentSpan != null) {
+                    currentSpan.addTags(tags);
+                    Event event = TracerFactory.buildEvent(currentSpan, eventName, System.currentTimeMillis());
+                    enqueueEvent(event);
+                }
+                else {
+                    logger.error("No span to add current event. Ignoring the Event '"+eventName+"'");
+                }
+            }
+            catch (Exception e) {
+                logger.error("Error in publishing event '"+eventName+"'", e);
             }
         }
     }
@@ -130,7 +174,7 @@ public class Tracer {
     }
 
     /**
-     * Send an event ,arking end of span.
+     * Send an event ,marking end of span.
      * This also removes the current span from current threads span stack
      * @param tags
      */
@@ -154,6 +198,30 @@ public class Tracer {
     }
 
     /**
+     * Send an event ,marking end of span.
+     * This also removes the specified span from thread stack
+     * @param tags
+     */
+    public static void endSpan(String spanId, Map<String, Object> tags) {
+        if(isEnabled()) {
+            try {
+                Span span = popSpan(spanId);
+                if(span != null) {
+                    span.addTags(tags);
+                    Event event = TracerFactory.buildEvent(span, "End", System.currentTimeMillis());
+                    enqueueEvent(event);
+                }
+                else {
+                    logger.error("No span to add End event. Ignoring the End Event");
+                }
+            }
+            catch (Exception e) {
+                logger.error("Error in publishing End event", e);
+            }
+        }
+    }
+
+    /**
      * Add tags to current span in the stag.
      * These tags would be published with every subsequent event in this span
      * @param tags
@@ -161,7 +229,7 @@ public class Tracer {
     public static void addTags(Map<String, Object> tags) {
         if(isEnabled()) {
             try {
-                Span currentSpan = popCurrentSpan();
+                Span currentSpan = getCurrentSpan();
                 if(currentSpan != null) {
                     currentSpan.addTags(tags);
                 }
@@ -178,7 +246,7 @@ public class Tracer {
     public static void addTag(String tagName, Object tagValue) {
         if(isEnabled()) {
             try {
-                Span currentSpan = popCurrentSpan();
+                Span currentSpan = getCurrentSpan();
                 if(currentSpan != null) {
                     currentSpan.getTags().put(tagName, tagValue);
                 }
@@ -230,6 +298,11 @@ public class Tracer {
         return currentSpan;
     }
 
+    private static Span getSpan(String spanId) {
+        return spanMap.get(spanId);
+    }
+
+
     private static void pushSpan(Span span) {
         Stack<Span> currentThreadSpanStack = threadSpanStacks.get(Thread.currentThread());
         if(currentThreadSpanStack == null) {
@@ -237,6 +310,8 @@ public class Tracer {
             threadSpanStacks.put(Thread.currentThread(), currentThreadSpanStack);
         }
         currentThreadSpanStack.push(span);
+        spanMap.put(span.getSpanId(), span);
+        spanThreadMap.put(span.getSpanId(), Thread.currentThread());
     }
 
     private static Span popCurrentSpan() {
@@ -245,9 +320,25 @@ public class Tracer {
         if(currentThreadSpanStack != null) {
             if(!currentThreadSpanStack.empty()) {
                 currentSpan = threadSpanStacks.get(Thread.currentThread()).pop();
+                spanMap.remove(currentSpan.getSpanId());
+                spanThreadMap.remove(currentSpan.getSpanId());
             }
         }
         return currentSpan;
+    }
+
+    private static Span popSpan(String spanId) {
+        Span span = spanMap.remove(spanId);
+        if(span != null) {
+            Stack<Span> threadSpanStack = threadSpanStacks.get(spanThreadMap.get(spanId));
+            if(threadSpanStack != null) {
+                if(!threadSpanStack.empty()) {
+                    threadSpanStack.remove(span);
+                    spanThreadMap.remove(span.getSpanId());
+                }
+            }
+        }
+        return span;
     }
 
     public static TracerConfiguration getTracerConfiguration() {
@@ -319,25 +410,25 @@ public class Tracer {
         TracerConfiguration configuration = ObjectMapperUtil.instance().readValue(new FileInputStream("./dstrace-publisher/config/tracer-config.json"), TracerConfiguration.class);
         Tracer.initialize(configuration);
         Tracer.setCurrentTraceId(UUID.randomUUID().toString());
-        Tracer.startSpan("span1",null, null);
+        Tracer.startSpan("1","span1",null, null);
+        Thread.sleep(100);
+        Tracer.startSpan("2","span1.1", null, null);
+        Thread.sleep(100);
+        Tracer.startSpan("3","span1.1.1", null, null);
+        Thread.sleep(100);
+        Tracer.startSpan("4","span1.1.1.1", null, null);
+        Thread.sleep(100);
+        Tracer.startSpan("5","span1.1.1.1.1", null, null);
         Thread.sleep(1000);
-        Tracer.startSpan("span1.1", null, null);
+        Tracer.endSpan("5", null);
         Thread.sleep(1000);
-        Tracer.startSpan("span1.1.1", null, null);
+        Tracer.endSpan("4", null);
         Thread.sleep(1000);
-        Tracer.startSpan("span1.1.1.1", null, null);
+        Tracer.endSpan("3", null);
         Thread.sleep(1000);
-        Tracer.startSpan("span1.1.1.1.1", null, null);
+        Tracer.endSpan("2", null);
         Thread.sleep(1000);
-        Tracer.endSpan();
-        Thread.sleep(1000);
-        Tracer.endSpan();
-        Thread.sleep(1000);
-        Tracer.endSpan();
-        Thread.sleep(1000);
-        Tracer.endSpan();
-        Thread.sleep(1000);
-        Tracer.endSpan();
+        Tracer.endSpan("1", null);
         Thread.sleep(20000);
         Tracer.stop();
     }

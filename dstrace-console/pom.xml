@@ -5,11 +5,11 @@
     <parent>
         <artifactId>D-S-Trace</artifactId>
         <groupId>nitinka.dstrace</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
     <groupId>nitinka.dstrace</groupId>
     <artifactId>dstrace-console</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>dstrace-console</name>
     <url>http://maven.apache.org</url>
     <repositories>
@@ -78,9 +78,9 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.flipkart.perf.server.LoaderServerService</mainClass>
+                    <mainClass>nitinka.dstrace.DsTraceConsoleService</mainClass>
                     <arguments>
-                        <argument>${project.basedir}/config/loader-server.yml</argument>
+                        <argument>${project.basedir}/config/dstrace-console.yml</argument>
                     </arguments>
                 </configuration>
             </plugin>

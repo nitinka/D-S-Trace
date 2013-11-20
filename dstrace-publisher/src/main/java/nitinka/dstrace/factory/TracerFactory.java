@@ -11,7 +11,7 @@ import java.util.UUID;
  * User: NitinK.Agarwal@yahoo.com
  */
 public class TracerFactory {
-    public static Span buildSpan(String spanName, String parentSpanId, Map<String, Object> tags) {
+    public static Span buildSpan(String spanId, String spanName, String parentSpanId, Map<String, Object> tags) {
         if(parentSpanId == null) {
             Span currentSpan = Tracer.getCurrentSpan();
             if(currentSpan != null) {
@@ -20,7 +20,7 @@ public class TracerFactory {
         }
 
         return new Span().
-                setSpanId(UUID.randomUUID().toString()).
+                setSpanId(spanId).
                 setParentSpanId(parentSpanId).
                 setSpanName(spanName).
                 addTags(tags);
