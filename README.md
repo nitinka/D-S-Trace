@@ -68,4 +68,30 @@ With D-S-Trace I intent to provide distributed tracing platform which can setup 
 8) mvn exec:java
 </pre>
 <b>4) Done</b>
+<hr size=2>
+<h3>Getting Started With Tracing: </h3>
+<b>1) Include Publisher Library in your application :</b>< allows users to publish events to dstrace-archive service.
+1) Add maven dep :<br>
+```xml
+
+<repositories>
+    <repository>
+        <id>nitinka.mvn.repo</id>
+        <url>https://github.com/nitinka/mvn-repo/raw/master</url>
+        <!-- use snapshot version -->
+        <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+        </snapshots>
+    </repository>
+</repositories>
+
+<dependency>
+    <groupId>nitinka.dstrace.publisher</groupId>
+    <artifactId>dstrace-publisher</artifactId>
+    <version>0.0.2</version>
+</dependency> 
+```
+</pre>
+
 
