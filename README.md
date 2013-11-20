@@ -70,10 +70,9 @@ With D-S-Trace I intent to provide distributed tracing platform which can setup 
 <b>4) Done</b>
 <hr size=2>
 <h3>Getting Started With Tracing: </h3>
-<b>1) Include Publisher Library in your application :</b>< allows users to publish events to dstrace-archive service.
-1) Add maven dep :<br>
-```xml
+<b>1) Include Publisher Library in your application :</b> allows users to publish events to dstrace-archive service.
 
+```xml
 <repositories>
     <repository>
         <id>nitinka.mvn.repo</id>
@@ -94,4 +93,50 @@ With D-S-Trace I intent to provide distributed tracing platform which can setup 
 ```
 </pre>
 
+<b>2) Initialize Publisher/Trace Configuration</b> :Initialize Tracer during the initialization of your application.
+```java
+TracerConfiguration configuration = new TracerConfiguration();
+        configuration.
+                setEnabled(true).
+                setBusinessUnit("bu1").
+                setApplication("app1").
+                setEventQueueSize(100000).
+                setHost("localhost").
+                setSamplePercentage(100).
+                setPublishConfiguration(new EventPublishConfiguration().
+                        setEventPublishDelay(5000).
+                        setEventPublishSize(100).
+                        setEnqueueFailedMessages(false).
+                        setPublisherClass("nitinka.dstrace.publish.RedisPublisherImpl").
+                        setPublisherConfig(new HashMap<String, Object>(){
+                            {
+                                put("redisHost","localhost"); 
+                                put("redisPort","trace-events");
+                            }
+                        }));
 
+        Tracer.initialize(configuration);
+```
+<b>3) Publish events from your app</b> :Use Trace class to publish events
+```java
+        Tracer.setCurrentTraceId(UUID.randomUUID().toString());
+        Tracer.startSpan("span1",null, null);
+        Thread.sleep(100);
+        Tracer.startSpan("span1.1", null, null);
+        Thread.sleep(100);
+        Tracer.startSpan("span1.1.1", null, null);
+        Thread.sleep(100);
+        Tracer.startSpan("span1.1.1.1", null, null);
+        Thread.sleep(100);
+        Tracer.startSpan("span1.1.1.1.1", null, null);
+        Thread.sleep(1000);
+        Tracer.endSpan();
+        Thread.sleep(1000);
+        Tracer.endSpan();
+        Thread.sleep(1000);
+        Tracer.endSpan();
+        Thread.sleep(1000);
+        Tracer.endSpan();
+        Thread.sleep(1000);
+        Tracer.endSpan();
+```
