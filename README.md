@@ -145,6 +145,7 @@ TracerConfiguration configuration = new TracerConfiguration();
 <pre>
 http://localhost:8888/index.htm?traceId=5993126e-24e3-4352-99f4-9a425b6fadd9
 </pre>
+![Alt Image](https://github.com/nitinka/D-S-Trace/raw/master/images/sample-trace.png)
 <b>5) Get the raw trace(json)</b> :Use trace ID to get the complete distributed transaction
 <pre>
 http://localhost:8888/dstrace-console/traces/5993126e-24e3-4352-99f4-9a425b6fadd9
