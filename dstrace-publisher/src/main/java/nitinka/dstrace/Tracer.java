@@ -407,28 +407,71 @@ public class Tracer {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, InterruptedException {
+/*
+        {
+            "enabled" : true,
+                "host" : "localhost",
+                "businessUnit" : "bu1",
+                "application" : "app1",
+                "samplePercentage" : 100,
+                "eventQueueSize" : 100000,
+                "publishConfiguration" : {
+            "eventPublishDelay" : 5000,
+                    "eventPublishSize" : 100,
+                    "enqueueFailedMessages" : false,
+                    "publisherClass" : "nitinka.dstrace.publish.RedisPublisherImpl",
+                    "publisherConfig" : {
+                "redisHost" : "localhost",
+                        "redisPort" : 6379,
+                        "redisChannel" : "test1"
+            }
+        }
+        }
+*/
+
+
+        Map<String, Object> tags = new HashMap<String, Object>();
         TracerConfiguration configuration = ObjectMapperUtil.instance().readValue(new FileInputStream("./dstrace-publisher/config/tracer-config.json"), TracerConfiguration.class);
         Tracer.initialize(configuration);
         Tracer.setCurrentTraceId(UUID.randomUUID().toString());
-        Tracer.startSpan("1","span1",null, null);
+        tags.put("key1","value1") ;
+        tags.put("key2","value2") ;
+        Tracer.startSpan("span1", tags, null);
         Thread.sleep(100);
-        Tracer.startSpan("2","span1.1", null, null);
+        tags.clear();
+        tags.put("key3","value3") ;
+        tags.put("key4","value4") ;
+        Tracer.startSpan("span1.1", tags, null);
+        tags.clear();
+        tags.put("key5","value5") ;
+        tags.put("key6","value6") ;
         Thread.sleep(100);
-        Tracer.startSpan("3","span1.1.1", null, null);
+        Tracer.startSpan("span1.1.1", tags, null);
+        tags.clear();
+        tags.put("key7","value7") ;
+        tags.put("key8","value8") ;
         Thread.sleep(100);
-        Tracer.startSpan("4","span1.1.1.1", null, null);
+        Tracer.startSpan("span1.1.1.1", tags, null);
+        tags.clear();
+        tags.put("key9","value9") ;
+        tags.put("key10","value10") ;
         Thread.sleep(100);
-        Tracer.startSpan("5","span1.1.1.1.1", null, null);
+        Tracer.startSpan("span1.1.1.1.1", tags, null);
+        tags.clear();
+        tags.put("key11","value11") ;
+        tags.put("key12","value12") ;
         Thread.sleep(1000);
-        Tracer.endSpan("5", null);
+        Tracer.endSpan();
         Thread.sleep(1000);
-        Tracer.endSpan("4", null);
+        Tracer.endSpan();
         Thread.sleep(1000);
-        Tracer.endSpan("3", null);
+        Tracer.endSpan();
         Thread.sleep(1000);
-        Tracer.endSpan("2", null);
+        Tracer.endSpan();
         Thread.sleep(1000);
-        Tracer.endSpan("1", null);
+        Tracer.endSpan();
+        Tracer.startSpan("spanabc", null, null);
+        Tracer.endSpan();
         Thread.sleep(20000);
         Tracer.stop();
     }

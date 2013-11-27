@@ -153,8 +153,8 @@ http://localhost:8888/dstrace-console/traces/5993126e-24e3-4352-99f4-9a425b6fadd
   "startTime": 1384939975603,
   "endTime": 1384939981010,
   "durationMS": 5407,
-  "firstSpanId": "1",
-  "lastSpanId": "1",
+  "firstSpan": "1",
+  "lastSpan": "1",
   "spans": {
     "1": {
       "spanId": "1",

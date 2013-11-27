@@ -36,7 +36,8 @@ abstract public class AbstractFetchClient {
         return ClassHelper.getClassInstance(config.getFetchClientClass(), new Class[]{Map.class}, new Object[]{config.getFetchConfig()}, AbstractFetchClient.class);
     }
 
-    public abstract List<Event> searchEvents(int pageNo, int pageSize, String searchTerm, String... fields) throws IOException;
-
+    public abstract List<Event> searchEvents(int pageNo, int pageSize, Map<String, String> fields) throws IOException;
     public abstract Span getSpan(String spanId) throws IOException;
+
+    public abstract List<Trace> searchTraces(int pageNo, int pageSize, Map<String, String> queryParameters) throws IOException;
 }

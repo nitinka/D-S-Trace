@@ -12,6 +12,7 @@ import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
+import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.sort.SortOrder;
@@ -35,7 +36,7 @@ public class ElasticSearchFetchClient extends AbstractFetchClient {
 
     private ObjectMapper objectMapper = ObjectMapperUtil.instance();
     private static Logger logger = LoggerFactory.getLogger(ElasticSearchFetchClient.class);
-    private final String index, type;
+    private final String index;
 
     public ElasticSearchFetchClient(Map<String, Object> config) {
         super(config);
@@ -49,12 +50,11 @@ public class ElasticSearchFetchClient extends AbstractFetchClient {
         }
 
         this.index = config.get("eventIndex").toString();
-        this.type = config.get("eventType").toString();
     }
 
     @Override
     public Event getEvent(String eventId) throws IOException, ExecutionException, InterruptedException {
-        GetResponse response = elasticClient.prepareGet(index, type, eventId)
+        GetResponse response = elasticClient.prepareGet(index, "event", eventId)
                 .execute()
                 .actionGet();
 
@@ -65,7 +65,11 @@ public class ElasticSearchFetchClient extends AbstractFetchClient {
 
     @Override
     public Span getSpan(String spanId) throws IOException {
-        List<Event> spanEvents = searchEvents(0, 1000, spanId, "spanId", "parentSpanId");
+        Map<String,String> fields = new HashMap<String, String>();
+        fields.put("spanId", spanId);
+        fields.put("parentSpanId", spanId);
+
+        List<Event> spanEvents = searchEvents(0, 1000, fields);
         if(spanEvents.size() > 0)
             return Span.build(spanEvents);
         return null;
@@ -73,7 +77,9 @@ public class ElasticSearchFetchClient extends AbstractFetchClient {
 
     @Override
     public Trace getTrace(String traceId) throws IOException {
-        List<Event> traceEvents = searchEvents(0, 1000, traceId, "traceId");
+        Map<String,String> fields = new HashMap<String, String>();
+        fields.put("traceId", traceId);
+        List<Event> traceEvents = searchEvents(0, 1000, fields);
         if(traceEvents.size() > 0)
             return Trace.build(traceEvents, traceId);
         return null;
@@ -100,12 +106,17 @@ public class ElasticSearchFetchClient extends AbstractFetchClient {
     }
 
     @Override
-    public List<Event> searchEvents(int pageNo, int pageSize, String searchTerm, String... fields) throws IOException {
+    public List<Event> searchEvents(int pageNo, int pageSize, Map<String, String> fields) throws IOException {
         List<Event> events = new ArrayList<Event>();
         SearchRequestBuilder searchRequest = elasticClient.prepareSearch(index)
-                .setTypes(type)
+                .setTypes("event")
                 .setSearchType(SearchType.DFS_QUERY_THEN_FETCH);
-        searchRequest.setQuery(QueryBuilders.multiMatchQuery(searchTerm, fields));
+
+        BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
+        for(String key : fields.keySet()) {
+            boolQueryBuilder.must(QueryBuilders.termQuery(key, fields.get(key)));
+        }
+        searchRequest.setQuery(boolQueryBuilder);
 
         SearchResponse searchResponse = searchRequest.setFrom(pageNo * pageSize).
                 setSize(pageSize).
@@ -122,4 +133,43 @@ public class ElasticSearchFetchClient extends AbstractFetchClient {
 
         return events;
     }
+
+
+    @Override
+    public List<Trace> searchTraces(int pageNo, int pageSize, Map<String, String> fields) throws IOException {
+        List<Trace> traces = new ArrayList<Trace>();
+
+        SearchRequestBuilder searchRequest = elasticClient.prepareSearch(index)
+                .setTypes("event")
+                .addField("traceId")
+                .setSearchType(SearchType.DFS_QUERY_THEN_FETCH);
+
+        BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
+        for(String key : fields.keySet()) {
+            boolQueryBuilder.must(QueryBuilders.termQuery(key, fields.get(key)));
+        }
+        searchRequest.setQuery(boolQueryBuilder);
+
+        SearchResponse searchResponse = searchRequest.setFrom(pageNo * pageSize * 100).
+                setSize(pageSize * 100).
+                setExplain(true).
+                addSort("timestamp", SortOrder.ASC).
+                execute().
+                actionGet();
+
+        Iterator<SearchHit> searchHitIterator = searchResponse.getHits().iterator();
+        Set<String> traceIds = new TreeSet<String>();
+        while(searchHitIterator.hasNext()) {
+            SearchHit searchHit = searchHitIterator.next();
+            String traceId = searchHit.getFields().get("traceId").getValue().toString();
+            if(traceIds.add(traceId)) {
+                traces.add(getTrace(traceId));
+            }
+            if(traceIds.size() == pageSize)
+                break;
+        }
+
+        return traces;
+    }
+
 }

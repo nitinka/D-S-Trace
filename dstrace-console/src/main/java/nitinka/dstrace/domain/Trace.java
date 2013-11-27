@@ -17,8 +17,8 @@ public class Trace {
     private long startTime;
     private long endTime;
     private long durationMS;
-    private String firstSpanId;
-    private String lastSpanId;
+    private String firstSpan;
+    private String lastSpan;
     private LinkedHashMap<String, Span> spans;
 
     public Trace() {
@@ -61,20 +61,20 @@ public class Trace {
         this.durationMS = durationMS;
     }
 
-    public String getFirstSpanId() {
-        return firstSpanId;
+    public String getFirstSpan() {
+        return firstSpan;
     }
 
-    public void setFirstSpanId(String firstSpanId) {
-        this.firstSpanId = firstSpanId;
+    public void setFirstSpan(String firstSpan) {
+        this.firstSpan = firstSpan;
     }
 
-    public String getLastSpanId() {
-        return lastSpanId;
+    public String getLastSpan() {
+        return lastSpan;
     }
 
-    public void setLastSpanId(String lastSpanId) {
-        this.lastSpanId = lastSpanId;
+    public void setLastSpan(String lastSpan) {
+        this.lastSpan = lastSpan;
     }
 
     public Map<String, Span> getSpans() {
@@ -127,12 +127,12 @@ public class Trace {
             }
 
             currentSpan.addEvent(event);
-            if(trace.firstSpanId == null)
-                trace.firstSpanId = currentSpan.getSpanId();
+            if(trace.firstSpan == null)
+                trace.firstSpan = currentSpan.getSpanName();
 
             tmpSpanMap.put(currentSpan.getSpanId(), currentSpan);
             oldestTimestampInTrace = event.getTimestamp();
-            trace.lastSpanId = currentSpan.getSpanId();
+            trace.lastSpan = currentSpan.getSpanName();
         }
 
         trace.setEndTime(oldestTimestampInTrace);

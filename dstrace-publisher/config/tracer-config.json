@@ -13,7 +13,7 @@
     "publisherConfig" : {
       "redisHost" : "localhost",
       "redisPort" : 6379,
-      "redisChannel" : "test1"
+      "redisChannel" : "tracer-event-channel"
     }
   }
 }

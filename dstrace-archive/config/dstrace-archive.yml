@@ -8,14 +8,14 @@ jMetricConfig:
 redisConsumerConfig:
   redisHost: "localhost"
   redisPort: 6379
-  channels: ["test1"]
+  channels: ["tracer-event-channel"]
 
 eventArchiveConfig:
   archiverClass: "nitinka.dstrace.archive.ElasticSearchEventArchiver"
   archiverConfig:
-    elasticSearchUrl: "http://localhost:9200"
+    elasticSearchHosts:
+      - "localhost:9300"
     eventIndex: "trace"
-    eventType: "event"
   archiverThreads: 10
 
 http:

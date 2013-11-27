@@ -1,5 +1,7 @@
 package nitinka.dstrace.archive;
 
+import nitinka.dstrace.archive.domain.BusinessUnit;
+import nitinka.dstrace.archive.domain.Event;
 import nitinka.dstrace.config.EventArchiveConfig;
 import nitinka.dstrace.util.ClassHelper;
 import org.codehaus.jackson.JsonParseException;
@@ -7,6 +9,7 @@ import sun.applet.resources.MsgAppletViewer;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,7 +26,8 @@ abstract public class AbstractEventArchiver {
         this.config = config;
     }
 
-    abstract public void archive(String events) throws Exception;
+    abstract public void archive(List<Event> events) throws Exception;
+    abstract public void updateBusinessUnit(List<BusinessUnit> businessUnit) throws Exception;
     abstract public void close() throws Exception;
 
     public static AbstractEventArchiver build(EventArchiveConfig config) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {

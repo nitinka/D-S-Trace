@@ -3,6 +3,7 @@ package nitinka.dstrace.resource;
 import com.yammer.metrics.annotation.Timed;
 import nitinka.dstrace.domain.Event;
 import nitinka.dstrace.fetch.AbstractFetchClient;
+import nitinka.dstrace.util.HttpServletRequestHelper;
 import nitinka.dstrace.util.ResponseBuilder;
 import nitinka.jmetrics.util.ObjectMapperUtil;
 import org.slf4j.Logger;
@@ -39,12 +40,12 @@ public class EventResource {
         return event;
     }
 
-/*
+
     @Produces(MediaType.APPLICATION_JSON)
     @GET
     @Timed
     public List<Event> getEvents(@Context HttpServletRequest request) throws IOException {
-        Map<String, String> queryParameters = parseQueryParameters(request);
+        Map<String, String> queryParameters = HttpServletRequestHelper.parseQueryParameters(request);
         int pageNo = 0;
         if(queryParameters.containsKey("pageNo")) {
             pageNo = Integer.parseInt(queryParameters.remove("pageNo"));
@@ -58,27 +59,9 @@ public class EventResource {
         }
 
         if(queryParameters.size() > 0) {
-            return fetchClient.searchEvents(queryParameters, pageNo, pageSize);
+            return fetchClient.searchEvents(pageNo, pageSize, queryParameters);
         }
 
         throw new WebApplicationException(ResponseBuilder.badRequest("No Search Query Parameters"));
     }
-*/
-
-    private Map<String, String> parseQueryParameters(HttpServletRequest request) {
-        Map<String, String> queryParameters = null;
-        String queryString = request.getQueryString();
-        if(queryString != null && !queryString.trim().equals("")) {
-            queryParameters = new HashMap<String, String>();
-            String[] parameters = queryString.split("&");
-            for(String parameter : parameters) {
-                String[] parameterTokens = parameter.split("=");
-                if(parameterTokens.length == 2) {
-                    queryParameters.put(parameterTokens[0], parameterTokens[1]);
-                }
-            }
-        }
-        return queryParameters;
-    }
-
 }

@@ -5,7 +5,7 @@
         "endTime": 1380023477411,
         "durationMS": 37,
         "firstspanId": "62a0cd55-daf1-4022-9ecf-2465b06809ca",
-        "lastSpanId": "62a0cd55-daf1-4022-9ecf-2465b06809ca",
+        "lastSpan": "62a0cd55-daf1-4022-9ecf-2465b06809ca",
         "spans": {
             "62a0cd55-daf1-4022-9ecf-2465b06809ca": {
                 "spanId": "62a0cd55-daf1-4022-9ecf-2465b06809ca",

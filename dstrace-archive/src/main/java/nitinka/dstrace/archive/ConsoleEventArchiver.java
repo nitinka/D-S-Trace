@@ -1,17 +1,14 @@
 package nitinka.dstrace.archive;
 
-import com.ning.http.client.AsyncHttpClient;
-import com.ning.http.client.Response;
+import nitinka.dstrace.archive.domain.BusinessUnit;
+import nitinka.dstrace.archive.domain.Event;
 import nitinka.dstrace.util.ObjectMapperUtil;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,19 +19,22 @@ import java.util.concurrent.Future;
  */
 public class ConsoleEventArchiver extends AbstractEventArchiver {
 
-    private ObjectMapper objectMapper = ObjectMapperUtil.instance();
-    private static Logger logger = LoggerFactory.getLogger(ConsoleEventArchiver.class);
-
-    public ConsoleEventArchiver(Map<String, Object> config) {
+    protected ConsoleEventArchiver(Map<String, Object> config) {
         super(config);
     }
 
     @Override
-    public void archive(String events) throws IOException, ExecutionException, InterruptedException {
-        logger.info("Archiving Events :"+events);
+    public void archive(List<Event> events) throws Exception {
+        //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
-    public void close() {
+    public void updateBusinessUnit(List<BusinessUnit> businessUnit) throws Exception {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void close() throws Exception {
+        //To change body of implemented methods use File | Settings | File Templates.
     }
 }
