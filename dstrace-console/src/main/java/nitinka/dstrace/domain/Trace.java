@@ -141,6 +141,18 @@ public class Trace {
         return trace;
     }
 
+    public TraceTemplate template() {
+        TraceTemplate template = new TraceTemplate();
+        template.setFirstOperation(this.firstSpan);
+        template.setLastOperation(this.lastSpan);
+
+        for(String spanName : this.spans.keySet()) {
+            Span span = this.spans.get(spanName);
+            template.addOperation(Operation.build(span));
+        }
+        return template;
+    }
+
     public static void main(String[] args) throws IOException {
         String eventsStr1 = "[{\"header\":{\"appName\":\"scp\",\"configName\":\"GET_/mappings\",\"profile\":\"fulfillment-b2c\",\"instanceId\":\"flo-ci-warehouse-1.nm.flipkart.com:35401\",\"eventId\":\"edcd2cfa-67b2-4088-8368-fdf27299c953\",\"timestamp\":1379591862416},\"data\":{\"tags\":{\"DEPLOY_ENV\":\"smoke-warehouse-1\",\"PADRINO_ENV\":\"production\"},\"traceId\":\"TXN-83f170d4-50bc-4d2f-82f9-89347a04fdac\",\"spanId\":\"1091c10e-6b7a-4fa5-9aa1-6c73d2408998\",\"parentSpanId\":null,\"eventName\":\"Start\"}},{\"header\":{\"appName\":\"scp\",\"configName\":\"ERROR_(?-mix:)\",\"profile\":\"fulfillment-b2c\",\"instanceId\":\"flo-ci-warehouse-1.nm.flipkart.com:35401\",\"eventId\":\"4b68b666-0e7c-4342-a44c-d37d02ed2ca0\",\"timestamp\":1379591862416},\"data\":{\"tags\":{\"DEPLOY_ENV\":\"smoke-warehouse-1\",\"PADRINO_ENV\":\"production\",\"status\":\"success\"},\"traceId\":\"TXN-83f170d4-50bc-4d2f-82f9-89347a04fdac\",\"spanId\":\"7cfcfda4-3e19-4a66-b39f-358011a7c482\",\"parentSpanId\":\"1091c10e-6b7a-4fa5-9aa1-6c73d2408998\",\"eventName\":\"Start\"}},{\"header\":{\"appName\":\"scp\",\"configName\":\"ERROR_(?-mix:)\",\"profile\":\"fulfillment-b2c\",\"instanceId\":\"flo-ci-warehouse-1.nm.flipkart.com:35401\",\"eventId\":\"c91a5970-95ee-4f5f-aedf-2bd61fb691dd\",\"timestamp\":1379591863181},\"data\":{\"tags\":{\"DEPLOY_ENV\":\"smoke-warehouse-1\",\"PADRINO_ENV\":\"production\",\"status\":\"success\"},\"traceId\":\"TXN-83f170d4-50bc-4d2f-82f9-89347a04fdac\",\"spanId\":\"7cfcfda4-3e19-4a66-b39f-358011a7c482\",\"parentSpanId\":\"1091c10e-6b7a-4fa5-9aa1-6c73d2408998\",\"eventName\":\"End\"}}]";
   //      String eventsStr1 = "[{\"header\":{\"appName\":\"scp\",\"configName\":\"ERROR_(?-mix:)\",\"profile\":\"fulfillment-b2c\",\"instanceId\":\"flo-ci-warehouse-1.nm.flipkart.com:35401\",\"eventId\":\"4b68b666-0e7c-4342-a44c-d37d02ed2ca0\",\"timestamp\":1379591862416},\"data\":{\"tags\":{\"DEPLOY_ENV\":\"smoke-warehouse-1\",\"PADRINO_ENV\":\"production\",\"status\":\"success\"},\"traceId\":\"TXN-83f170d4-50bc-4d2f-82f9-89347a04fdac\",\"spanId\":\"7cfcfda4-3e19-4a66-b39f-358011a7c482\",\"parentSpanId\":\"1091c10e-6b7a-4fa5-9aa1-6c73d2408998\",\"eventName\":\"Start\"}},{\"header\":{\"appName\":\"scp\",\"configName\":\"ERROR_(?-mix:)\",\"profile\":\"fulfillment-b2c\",\"instanceId\":\"flo-ci-warehouse-1.nm.flipkart.com:35401\",\"eventId\":\"c91a5970-95ee-4f5f-aedf-2bd61fb691dd\",\"timestamp\":1379591863181},\"data\":{\"tags\":{\"DEPLOY_ENV\":\"smoke-warehouse-1\",\"PADRINO_ENV\":\"production\",\"status\":\"success\"},\"traceId\":\"TXN-83f170d4-50bc-4d2f-82f9-89347a04fdac\",\"spanId\":\"7cfcfda4-3e19-4a66-b39f-358011a7c482\",\"parentSpanId\":\"1091c10e-6b7a-4fa5-9aa1-6c73d2408998\",\"eventName\":\"End\"}},{\"header\":{\"appName\":\"scp\",\"configName\":\"GET_/mappings\",\"profile\":\"fulfillment-b2c\",\"instanceId\":\"flo-ci-warehouse-1.nm.flipkart.com:35401\",\"eventId\":\"edcd2cfa-67b2-4088-8368-fdf27299c953\",\"timestamp\":1379591862416},\"data\":{\"tags\":{\"DEPLOY_ENV\":\"smoke-warehouse-1\",\"PADRINO_ENV\":\"production\"},\"traceId\":\"TXN-83f170d4-50bc-4d2f-82f9-89347a04fdac\",\"spanId\":\"1091c10e-6b7a-4fa5-9aa1-6c73d2408998\",\"parentSpanId\":null,\"eventName\":\"Start\"}}]";
