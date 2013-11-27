@@ -1,9 +1,8 @@
 package nitinka.dstrace.resource;
 
 import com.yammer.metrics.annotation.Timed;
-import nitinka.dstrace.domain.Span;
 import nitinka.dstrace.domain.Trace;
-import nitinka.dstrace.domain.TraceTemplate;
+import nitinka.dstrace.domain.TraceRoute;
 import nitinka.dstrace.fetch.AbstractFetchClient;
 import nitinka.dstrace.util.HttpServletRequestHelper;
 import nitinka.dstrace.util.ResponseBuilder;
@@ -42,9 +41,9 @@ public class TraceResource {
 
     @Produces(MediaType.APPLICATION_JSON)
     @GET
-    @Path("/{traceId}/template")
+    @Path("/{traceId}/route")
     @Timed
-    public TraceTemplate getTraceTemplate(@PathParam("traceId") String traceId) throws InterruptedException, ExecutionException, IOException {
+    public TraceRoute getTraceTemplate(@PathParam("traceId") String traceId) throws InterruptedException, ExecutionException, IOException {
         Trace trace = fetchClient.getTrace(traceId);
         if(trace == null)
             throw new WebApplicationException(ResponseBuilder.resourceNotFound("Trace", traceId));

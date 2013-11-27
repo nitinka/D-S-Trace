@@ -9,11 +9,11 @@ import java.util.LinkedHashMap;
  * Time: 7:00 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TraceTemplate {
+public class TraceRoute {
     private LinkedHashMap<String, Operation> operations;
     private String firstOperation;
     private String lastOperation;
-    public TraceTemplate() {
+    public TraceRoute() {
         this.operations = new LinkedHashMap<String, Operation>();
     }
 

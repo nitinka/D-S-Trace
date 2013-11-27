@@ -141,8 +141,8 @@ public class Trace {
         return trace;
     }
 
-    public TraceTemplate template() {
-        TraceTemplate template = new TraceTemplate();
+    public TraceRoute template() {
+        TraceRoute template = new TraceRoute();
         template.setFirstOperation(this.firstSpan);
         template.setLastOperation(this.lastSpan);
 
