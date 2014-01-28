@@ -2,48 +2,146 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f016c2c6-88dc-4131-989a-3c0c74f73273" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/fetch/AbstractFetchClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/fetch/ElasticSearchFetchClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/domain/Event.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_spatial4j_spatial4j_0_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_analyzers_common_4_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_codecs_4_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_core_4_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_grouping_4_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_highlighter_4_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_join_4_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_memory_4_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_misc_4_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_queries_4_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_queryparser_4_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_sandbox_4_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_spatial_4_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_suggest_4_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_elasticsearch_elasticsearch_0_90_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/util/ResponseBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/domain/Span.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dstrace-archive/dstrace-archiver.iml" afterPath="$PROJECT_DIR$/dstrace-console/dstrace-console.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dstrace-archive/src/main/java/nitinka/dstrace/archive/ElasticSearchEventArchiver.java" afterPath="$PROJECT_DIR$/dstrace-archive/src/main/java/nitinka/dstrace/archive/ElasticSearchEventArchiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/factory/TracerFactory.java" afterPath="$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/factory/TracerFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample-dropwizard-app/src/main/java/nitinka/dstrace/sample/resource/HelloResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample-restexpress-app/src/main/java/nitinka/dstrace/sample/controller/SampleController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/DsTraceConsoleService.java" afterPath="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/DsTraceConsoleService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/Tracer.java" afterPath="$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/Tracer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/conf/TracerConfiguration.java" afterPath="$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/conf/TracerConfiguration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dstrace-console/dstrace-console.iml" afterPath="$PROJECT_DIR$/dstrace-console/dstrace-console.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dstrace-publisher/dstrace-publisher.iml" afterPath="$PROJECT_DIR$/dstrace-publisher/dstrace-publisher.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dstrace-archive/pom.xml" afterPath="$PROJECT_DIR$/dstrace-archive/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dstrace-console/pom.xml" afterPath="$PROJECT_DIR$/dstrace-console/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dstrace-publisher/pom.xml" afterPath="$PROJECT_DIR$/dstrace-publisher/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="D-S-Trace.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384249552707" ignored="false" />
+    <file path="/Dummy.txt" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390890294875" ignored="false" />
     <file path="/Header.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384251873824" ignored="false" />
     <file path="/Event.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384253587455" ignored="false" />
-    <file path="/TracerFactory.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384264293613" ignored="false" />
+    <file path="/TracerFactory.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384938753950" ignored="false" />
     <file path="/tracer-config.json" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384253917012" ignored="false" />
     <file path="/dstrace-console.yml" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384255611491" ignored="false" />
     <file path="/ElasticSearchClient.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384256742373" ignored="false" />
-    <file path="/AbstractEventArchiver.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384256789540" ignored="false" />
-    <file path="/ElasticSearchFetchClient.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384275782989" ignored="false" />
-    <file path="/AbstractFetchClient.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384273659160" ignored="false" />
-    <file path="/EventResource.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384273652799" ignored="false" />
-    <file path="/DsTraceConsoleService.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384263891347" ignored="false" />
-    <file path="/fragment.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384264044765" ignored="false" />
-    <file path="/ElasticSearchEventArchiver.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384264221262" ignored="false" />
+    <file path="/AbstractEventArchiver.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385360077810" ignored="false" />
+    <file path="/ElasticSearchFetchClient.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385550558549" ignored="false" />
+    <file path="/AbstractFetchClient.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385548070804" ignored="false" />
+    <file path="/EventResource.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385547933176" ignored="false" />
+    <file path="/DsTraceConsoleService.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390469728281" ignored="false" />
+    <file path="/fragment.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390891163032" ignored="false" />
+    <file path="/ElasticSearchEventArchiver.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385364837588" ignored="false" />
     <file path="/ResponseBuilder.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384265329077" ignored="false" />
+    <file path="/Span.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384931803609" ignored="false" />
+    <file path="/SpanResource.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384365951239" ignored="false" />
+    <file path="/README.md" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385550427845" ignored="false" />
+    <file path="/Trace.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385560198572" ignored="false" />
+    <file path="/RedisPublisherImpl.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384932540803" ignored="false" />
+    <file path="/Tracer.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385547225915" ignored="false" />
+    <file path="/TraceResource.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385560435633" ignored="false" />
+    <file path="/index.htm" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384935423840" ignored="false" />
+    <file path="/pom.xml" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390471756700" ignored="false" />
+    <file path="/a.dummy" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384939581350" ignored="false" />
+    <file path="/EventPublishConfiguration.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384941223432" ignored="false" />
+    <file path="/dstrace-archive.yml" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1384942736333" ignored="false" />
+    <file path="/BusinessUnit.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385359674417" ignored="false" />
+    <file path="/Application.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385359642287" ignored="false" />
+    <file path="/Operation.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385560587274" ignored="false" />
+    <file path="/DsTraceArchiveService.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385363939945" ignored="false" />
+    <file path="/HttpServletRequestHelper.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385547924732" ignored="false" />
+    <file path="/TraceTemplate.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385559739264" ignored="false" />
+    <file path="$PROJECT_DIR$/../tracer-client-java/src/main/java/com/flipkart/tracer/filter/dropwizard/TraceFilter.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385963411393" ignored="false" />
+    <file path="/TraceFilter.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385976718292" ignored="false" />
+    <file path="$PROJECT_DIR$/../tracer-client-java/pom.xml" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386316433411" ignored="false" />
+    <file path="$PROJECT_DIR$/../tracer-client-java/src/main/java/com/flipkart/tracer/filter/restexpress/RestExpressTracerPreprocessor.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386316364336" ignored="false" />
+    <file path="$PROJECT_DIR$/../tracer-client-java/src/main/java/com/flipkart/tracer/filter/restexpress/RestExpressTracerMessageObserver.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386316373995" ignored="false" />
+    <file path="$PROJECT_DIR$/../tracer-client-java/src/test/java/com/flipkart/tracer/restexpress/RestExpressTest.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385963199014" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/LoaderServerService.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/Sample.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385977243671" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-http-operations/src/main/java/perf/operation/http/function/HttpGet.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/resource/AgentResource.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/resource/DeployResourcesResource.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/pom.xml" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385977354158" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/dataFix/DataFixRunner.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385977354158" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-core/src/main/java/com/flipkart/perf/core/LoadController.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/pom.xml" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385977354158" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-agent/src/main/java/com/flipkart/perf/agent/client/JobClient.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910792" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/cache/AgentsCache.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385977354158" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/cache/JobsCache.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385977354158" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/util/JobStatsHelper.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910792" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/cache/LibCache.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385977354158" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-core/pom.xml" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385977354158" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/daemon/CounterThroughputThread.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008911023" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/daemon/GroupConfConsolidationThread.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008911023" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/daemon/JobDispatcherThread.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008911023" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/daemon/TimerComputationThread.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008911023" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/util/DeploymentHelper.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385977354158" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/daemon/CounterCompoundThread.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/config/LoaderServerConfiguration.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385977354158" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-core/src/main/java/com/flipkart/perf/core/StatsCollectorThread.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="/StatsCollectorThread.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385977505707" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/domain/Job.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910792" ignored="false" />
+    <file path="/TraceLifecycleListener.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1385979459521" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-core/src/main/java/com/flipkart/perf/core/GroupStatsQueue.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-core/src/main/java/com/flipkart/perf/core/GroupController.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-core/src/main/java/com/flipkart/perf/core/GroupStatsInstance.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-core/src/main/java/com/flipkart/perf/core/SequentialFunctionExecutor.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/config/loader-server.yml" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/resource/JobResource.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-core/src/main/java/com/flipkart/perf/core/FunctionCounter.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910791" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-core/src/main/java/com/flipkart/perf/domain/Load.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910792" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-core/src/main/java/com/flipkart/perf/util/Timer.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910792" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-core/src/main/java/com/flipkart/perf/util/Counter.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910792" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-core/src/main/java/com/flipkart/perf/domain/Group.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910792" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-core/src/main/java/com/flipkart/perf/domain/GroupFunction.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008910792" ignored="false" />
+    <file path="$PROJECT_DIR$/../loader/loader-server/src/main/java/com/flipkart/perf/server/config/JobFSConfig.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386008911023" ignored="false" />
+    <file path="/AspectExample.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386061336544" ignored="false" />
+    <file path="$PROJECT_DIR$/../tracer-client-java/src/main/java/com/flipkart/tracer/filter/jersey/aspect/JerseyPathInterceptor.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386066414122" ignored="false" />
+    <file path="/JerseyPathInterceptor.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386066070766" ignored="false" />
+    <file path="/aop.xml" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386062853037" ignored="false" />
+    <file path="$PROJECT_DIR$/../tracer-client-java/src/main/resources/urlPatterns.txt" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386237784761" ignored="false" />
+    <file path="/SeedBasedTraceFilter.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386316204275" ignored="false" />
+    <file path="/urlPatterns.txt" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386236507896" ignored="false" />
+    <file path="/JerseyTraceFilter.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386314405687" ignored="false" />
+    <file path="$PROJECT_DIR$/../tracer-client-java/src/main/java/com/flipkart/tracer/filter/FilterConfig.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386315631797" ignored="false" />
+    <file path="/FilterConfig.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386315616166" ignored="false" />
+    <file path="$PROJECT_DIR$/../tracer-client-java/src/main/java/com/flipkart/tracer/filter/TracerFilterConfig.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386315709252" ignored="false" />
+    <file path="/RestExpressTracerMessageObserver.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386315850517" ignored="false" />
+    <file path="$PROJECT_DIR$/../tracer-client-java/src/main/java/com/flipkart/tracer/Tracer.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386315973237" ignored="false" />
+    <file path="/RestExpressTracerPreprocessor.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386316338353" ignored="false" />
+    <file path="$PROJECT_DIR$/../fk-alertservice/src/main/java/flipkart/alert/resource/TeamResource.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386582630127" ignored="false" />
+    <file path="$PROJECT_DIR$/../fk-alertservice/src/main/java/flipkart/alert/dispatch/MailStatusDispatcher.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386582630127" ignored="false" />
+    <file path="$PROJECT_DIR$/../fk-alertservice/src/main/java/flipkart/alert/storage/TsdbHttpClient.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386585088460" ignored="false" />
+    <file path="/TsdbHttpClient.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386585084811" ignored="false" />
+    <file path="$PROJECT_DIR$/../fk-alertservice/src/main/java/flipkart/alert/util/MetricHelper.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386666567782" ignored="false" />
+    <file path="/MetricHelper.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386666531927" ignored="false" />
+    <file path="$PROJECT_DIR$/../fk-alertservice/src/main/java/flipkart/alert/util/ExpressionHelper.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386657783747" ignored="false" />
+    <file path="/ExpressionHelper.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386657781966" ignored="false" />
+    <file path="$PROJECT_DIR$/../fk-alertservice/src/main/java/flipkart/alert/util/RuleHelper.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386664421897" ignored="false" />
+    <file path="/RuleHelper.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386664420706" ignored="false" />
+    <file path="$PROJECT_DIR$/../fk-alertservice/src/test/java/flipkart/alert/helper/TestMetricHelper.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386668014272" ignored="false" />
+    <file path="/TestMetricHelper.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386668006094" ignored="false" />
+    <file path="$PROJECT_DIR$/../fk-alertservice/src/main/java/flipkart/alert/domain/AlertVariable.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386666920006" ignored="false" />
+    <file path="/AlertVariable.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386666915959" ignored="false" />
+    <file path="$PROJECT_DIR$/../fk-alertservice/src/test/resources/fixtures/testResolveVariablesWithNoRegEx.json" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386668100605" ignored="false" />
+    <file path="/testResolveVariablesWithNoRegEx.json" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386667925901" ignored="false" />
+    <file path="$PROJECT_DIR$/../fk-alertservice/src/test/java/flipkart/alert/helper/TestDateHelper.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386667201997" ignored="false" />
+    <file path="$PROJECT_DIR$/../fk-alertservice/src/main/java/flipkart/alert/domain/Metric.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386668280527" ignored="false" />
+    <file path="/Metric.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1386668280527" ignored="false" />
+    <file path="/JerseyTracerFilter.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390892260038" ignored="false" />
+    <file path="/TracerFilterConfig.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390469610590" ignored="false" />
+    <file path="/TracerConfiguration.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390469814119" ignored="false" />
+    <file path="/sample-dropwizard-app.yml" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390472656649" ignored="false" />
+    <file path="/SampleAppService.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390886059591" ignored="false" />
+    <file path="/HelloResource.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390886282792" ignored="false" />
+    <file path="/SampleAppConfiguration.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390472676027" ignored="false" />
+    <file path="$PROJECT_DIR$/../tracer-client-java/src/main/java/com/flipkart/tracer/filter/jersey/JerseyTracerFilter.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390888140607" ignored="false" />
+    <file path="/SampleController.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390891167004" ignored="false" />
+    <file path="/SampleApp.java" changelist="f016c2c6-88dc-4131-989a-3c0c74f73273" time="1390891464266" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +156,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -92,7 +191,148 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/fetch/AbstractFetchClient.java" line="21" class="nitinka.dstrace.fetch.AbstractFetchClient" package="nitinka.dstrace.fetch">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/domain/Span.java" line="85" class="nitinka.dstrace.domain.Span" package="nitinka.dstrace.domain">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/dstrace-archive/src/main/java/nitinka/dstrace/DsTraceArchiveService.java" line="66" class="nitinka.dstrace.DsTraceArchiveService$2" package="nitinka.dstrace">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/dstrace-archive/src/main/java/nitinka/dstrace/archive/ElasticSearchEventArchiver.java" line="51" class="nitinka.dstrace.archive.ElasticSearchEventArchiver" package="nitinka.dstrace.archive">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/dstrace-archive/src/main/java/nitinka/dstrace/DsTraceArchiveService.java" line="68" class="nitinka.dstrace.DsTraceArchiveService$2" package="nitinka.dstrace">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/dstrace-archive/src/main/java/nitinka/dstrace/archive/ElasticSearchEventArchiver.java" line="58" class="nitinka.dstrace.archive.ElasticSearchEventArchiver" package="nitinka.dstrace.archive">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/resource/TraceResource.java" line="35" class="nitinka.dstrace.resource.TraceResource" package="nitinka.dstrace.resource">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/filter/jersey/JerseyTracerFilter.java" line="257" class="nitinka.dstrace.filter.jersey.JerseyTracerFilter" package="nitinka.dstrace.filter.jersey">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/filter/jersey/JerseyTracerFilter.java" line="321" class="nitinka.dstrace.filter.jersey.JerseyTracerFilter" package="nitinka.dstrace.filter.jersey">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/sample-restexpress-app/src/main/java/nitinka/dstrace/sample/controller/SampleController.java" line="14" class="nitinka.dstrace.sample.controller.SampleController" package="nitinka.dstrace.sample.controller">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -102,19 +342,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DsTraceConsoleService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/DsTraceConsoleService.java">
+      <file leaf-file-name="SampleApp.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sample-restexpress-app/src/main/java/nitinka/dstrace/sample/SampleApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="22" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventResource.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/resource/EventResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="39" selection-start="1836" selection-end="1836" vertical-scroll-proportion="0.0">
+            <state line="41" column="89" selection-start="2121" selection-end="2121" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -122,48 +353,88 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractFetchClient.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/fetch/AbstractFetchClient.java">
+      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dstrace-publisher/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="108" selection-start="1509" selection-end="1509" vertical-scroll-proportion="0.0">
+            <state line="11" column="18" selection-start="552" selection-end="552" vertical-scroll-proportion="0.2530675">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ElasticSearchFetchClient.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/fetch/ElasticSearchFetchClient.java">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sample-dropwizard-app/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="12" selection-start="3154" selection-end="3154" vertical-scroll-proportion="0.0">
+            <state line="11" column="18" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sample-restexpress-app/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="18" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="18" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dstrace-archive/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="18" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dstrace-console/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="18" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JerseyTracerFilter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/filter/jersey/JerseyTracerFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="298" column="60" selection-start="12156" selection-end="12156" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#3038#3045#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#getUrlPattern#0;class#URLPatternInfo#0;class#JerseyTracerFilter#0" expanded="false" />
+                <element signature="method#getTokens#0;class#URLPatternInfo#0;class#JerseyTracerFilter#0" expanded="false" />
+                <element signature="method#getParametersAtIndex#0;class#URLPatternInfo#0;class#JerseyTracerFilter#0" expanded="false" />
+                <element signature="method#getTokensRegExPattern#0;class#URLPatternInfo#0;class#JerseyTracerFilter#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.class" pinned="false" current="true" current-in-tab="true">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/0.90.6/elasticsearch-0.90.6.jar!/org/elasticsearch/client/Client.class">
+      <file leaf-file-name="SampleAppService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sample-dropwizard-app/src/main/java/nitinka/dstrace/sample/SampleAppService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="17" selection-start="171" selection-end="171" vertical-scroll-proportion="0.11574074">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResponseBuilder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/util/ResponseBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="27" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tracer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/Tracer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="74" selection-start="2767" selection-end="2767" vertical-scroll-proportion="0.0">
+            <state line="38" column="0" selection-start="1305" selection-end="1430" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -187,22 +458,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/config/DsTraceConsoleConfiguration.java" />
-        <option value="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/config/EventFetchConfig.java" />
-        <option value="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/storage/ElasticSearchEventArchiver.java" />
-        <option value="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/storage/ElasticSearchClient.java" />
-        <option value="$PROJECT_DIR$/dstrace-console/config/dstrace-console.yml" />
-        <option value="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/storage/AbstractEventArchiver.java" />
-        <option value="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/storage/ElasticSearchFetchClient.java" />
-        <option value="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/resource/AdminResource.java" />
-        <option value="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/storage/AbstractFetchClient.java" />
-        <option value="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/DsTraceConsoleService.java" />
-        <option value="$PROJECT_DIR$/dstrace-archive/src/main/java/nitinka/dstrace/archive/ElasticSearchEventArchiver.java" />
-        <option value="$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/factory/TracerFactory.java" />
-        <option value="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/util/ResponseBuilder.java" />
-        <option value="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/resource/EventResource.java" />
-        <option value="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/fetch/AbstractFetchClient.java" />
-        <option value="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/fetch/ElasticSearchFetchClient.java" />
+        <option value="$PROJECT_DIR$/sample-dropwizard-app/config/sample-dropwizard-app.yml" />
+        <option value="$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/Tracer.java" />
+        <option value="$PROJECT_DIR$/sample-dropwizard-app/src/main/java/nitinka/dstrace/sample/SampleAppService.java" />
+        <option value="$PROJECT_DIR$/sample-dropwizard-app/src/main/java/nitinka/dstrace/sample/resource/HelloResource.java" />
+        <option value="$PROJECT_DIR$/sample-restexpress-app/src/main/java/nitinka/dstrace/controller/SampleController.java" />
+        <option value="$PROJECT_DIR$/sample-restexpress-app/src/main/java/nitinka/dstrace/controller/SampleApp.java" />
+        <option value="$PROJECT_DIR$/sample-restexpress-app/src/main/java/nitinka/dstrace/sample/controller/SampleApp.java" />
+        <option value="$PROJECT_DIR$/sample-restexpress-app/src/main/java/nitinka/dstrace/sample/controller/SampleController.java" />
+        <option value="$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/filter/jersey/JerseyTracerFilter.java" />
+        <option value="$PROJECT_DIR$/sample-restexpress-app/src/main/java/nitinka/dstrace/sample/SampleApp.java" />
+        <option value="$PROJECT_DIR$/dstrace-publisher/pom.xml" />
+        <option value="$PROJECT_DIR$/dstrace-archive/pom.xml" />
+        <option value="$PROJECT_DIR$/dstrace-console/pom.xml" />
+        <option value="$PROJECT_DIR$/sample-dropwizard-app/pom.xml" />
+        <option value="$PROJECT_DIR$/sample-restexpress-app/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -245,7 +516,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -253,6 +523,50 @@
               <option name="myItemId" value="D-S-Trace" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: com.sun.jersey:jersey-core:1.15" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jersey-core-1.15.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Maven: com.sun.jersey:jersey-core:1.15" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jersey-core-1.15.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -261,6 +575,212 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample-restexpress-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample-restexpress-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample-restexpress-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample-restexpress-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample-restexpress-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample-restexpress-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample-dropwizard-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample-dropwizard-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample-dropwizard-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -356,7 +876,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
+              <option name="myItemId" value="filter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restexpress" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -370,69 +894,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dstrace-console" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="D-S-Trace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="D-S-Trace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dstrace-console" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="D-S-Trace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="D-S-Trace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dstrace-console" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dstrace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="D-S-Trace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="D-S-Trace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dstrace-console" />
+              <option name="myItemId" value="dstrace-publisher" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -452,7 +914,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
+              <option name="myItemId" value="filter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jersey" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dstrace-publisher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -469,52 +953,71 @@
               <option name="myItemId" value="dstrace-console" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="D-S-Trace" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="D-S-Trace" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dstrace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fetch" />
+              <option name="myItemId" value="dstrace-archive" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_directory_selection" value="$PROJECT_DIR$/sample-restexpress-app/src/main/java/nitinka/dstrace/sample" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="OverrideImplement.combined" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.lastSelected" value="se.expertsystem.intellij.aop.aspectj.AspectJProjectComponent" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tracer-client-java" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="nitinka.dstrace.sample.resource" />
+      <recent name="nitinka.dstrace.sample.config" />
+      <recent name="nitinka.dstrace.sample" />
+      <recent name="nitinka.dstrace.conf" />
+      <recent name="nitinka.dstrace" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sample-restexpress-app/config" />
+      <recent name="$PROJECT_DIR$/dstrace-console" />
+      <recent name="$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace" />
+      <recent name="$PROJECT_DIR$/dstrace-console/src/main" />
       <recent name="$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace" />
-      <recent name="$PROJECT_DIR$/dstrace-archive/src/main/java/nitinka/dstrace/storage" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="nitinka.dstrace" />
+      <recent name="nitinka.dstrace.domain" />
+      <recent name="nitinka.dstrace.archive.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DsTraceConsoleService">
+  <component name="RunManager" selected="Application.SampleAppService">
     <configuration default="false" name="DsTraceConsoleService" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="nitinka.dstrace.DsTraceConsoleService" />
       <option name="VM_PARAMETERS" value="" />
@@ -542,29 +1045,35 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="DsTraceArchiveService" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="nitinka.dstrace.DsTraceArchiveService" />
+    <configuration default="false" name="SampleAppService" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="nitinka.dstrace.sample.SampleAppService" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="dstrace-archive/config/dstrace-archive.yml" />
+      <option name="PROGRAM_PARAMETERS" value="sample-dropwizard-app/config/sample-dropwizard-app.yml" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="dstrace-archive" />
+      <module name="sample-dropwizard-app" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="JProfiler">
         <option name="WINDOW" value="false" />
         <option name="JVMPI" value="false" />
         <option name="INTERPRETED" value="false" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="Tracer" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="nitinka.dstrace.Tracer" />
+    <configuration default="false" name="JerseyTracerFilter" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="nitinka.dstrace.filter.jersey.JerseyTracerFilter" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -576,6 +1085,44 @@
       <module name="dstrace-publisher" />
       <envs />
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SampleController" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="nitinka.dstrace.sample.controller.SampleController" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sample-restexpress-app" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SampleApp" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="nitinka.dstrace.sample.SampleApp" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="sample-restexpress-app" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -667,16 +1214,20 @@
       <patterns />
       <method />
     </configuration>
-    <list size="3">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.DsTraceConsoleService" />
-      <item index="1" class="java.lang.String" itemvalue="Application.DsTraceArchiveService" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Tracer" />
+      <item index="1" class="java.lang.String" itemvalue="Application.SampleAppService" />
+      <item index="2" class="java.lang.String" itemvalue="Application.JerseyTracerFilter" />
+      <item index="3" class="java.lang.String" itemvalue="Application.SampleController" />
+      <item index="4" class="java.lang.String" itemvalue="Application.SampleApp" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.DsTraceConsoleService" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Tracer" />
-        <item index="2" class="java.lang.String" itemvalue="Application.DsTraceArchiveService" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.SampleAppService" />
+        <item index="1" class="java.lang.String" itemvalue="Application.SampleApp" />
+        <item index="2" class="java.lang.String" itemvalue="Application.SampleController" />
+        <item index="3" class="java.lang.String" itemvalue="Application.JerseyTracerFilter" />
+        <item index="4" class="java.lang.String" itemvalue="Application.DsTraceConsoleService" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -685,6 +1236,24 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f016c2c6-88dc-4131-989a-3c0c74f73273" name="Default" comment="" />
@@ -693,31 +1262,51 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="860" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5575843" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286517" sideWeight="0.49764627" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.54353935" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3988764" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286517" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53792137" sideWeight="0.5998655" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53792137" sideWeight="0.39542705" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32022473" sideWeight="0.49495628" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286517" sideWeight="0.49764627" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24949563" sideWeight="0.20505618" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.377809" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37861466" sideWeight="0.46207866" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56882024" sideWeight="0.49495628" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -780,122 +1369,225 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dstrace-archive/config/dstrace-archive.yml">
+    <entry file="file://$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/filter/restexpress/RestExpressTracerMessageObserver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="18" selection-start="313" selection-end="313" vertical-scroll-proportion="0.28425655">
+        <state line="14" column="13" selection-start="403" selection-end="403" vertical-scroll-proportion="0.24052478">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/config/EventFetchConfig.java">
+    <entry file="file://$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/filter/restexpress/RestExpressTracerPreprocessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="41" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0">
+        <state line="19" column="52" selection-start="612" selection-end="612" vertical-scroll-proportion="0.28425655">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/config/DsTraceConsoleConfiguration.java">
+    <entry file="file://$PROJECT_DIR$/sample-dropwizard-app/config/sample-dropwizard-app.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="834" selection-end="834" vertical-scroll-proportion="0.0">
+        <state line="26" column="17" selection-start="682" selection-end="682" vertical-scroll-proportion="0.5864662">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/domain/Event.java">
+    <entry file="file://$PROJECT_DIR$/sample-restexpress-app/config/tracer-config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="13" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0">
+        <state line="12" column="34" selection-start="377" selection-end="377" vertical-scroll-proportion="0.28892455">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/nitinka/jmetrics/JMetrics/0.1.3/JMetrics-0.1.3.jar!/nitinka/jmetrics/archive/RRD4JArchivingEngine.class">
+    <entry file="file://$PROJECT_DIR$/dstrace-publisher/config/tracer-config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="1625" selection-end="1625" vertical-scroll-proportion="-13.12">
+        <state line="18" column="1" selection-start="0" selection-end="494" vertical-scroll-proportion="0.40601504">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dstrace-console/config/dstrace-console.yml">
+    <entry file="file://$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/conf/TracerFilterConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="51" selection-start="147" selection-end="183" vertical-scroll-proportion="0.0">
+        <state line="9" column="13" selection-start="216" selection-end="216" vertical-scroll-proportion="0.196793">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/factory/TracerFactory.java">
+    <entry file="file://$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/filter/jersey/JerseyTracerFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="27" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.0">
+        <state line="298" column="60" selection-start="12156" selection-end="12156" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getUrlPattern#0;class#URLPatternInfo#0;class#JerseyTracerFilter#0" expanded="false" />
+            <element signature="method#getTokens#0;class#URLPatternInfo#0;class#JerseyTracerFilter#0" expanded="false" />
+            <element signature="method#getParametersAtIndex#0;class#URLPatternInfo#0;class#JerseyTracerFilter#0" expanded="false" />
+            <element signature="method#getTokensRegExPattern#0;class#URLPatternInfo#0;class#JerseyTracerFilter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample-dropwizard-app/src/main/java/nitinka/dstrace/sample/SampleAppService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="1305" selection-end="1430" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dstrace-archive/src/main/java/nitinka/dstrace/DsTraceArchiveService.java">
+    <entry file="file://$PROJECT_DIR$/sample-restexpress-app/src/main/java/nitinka/dstrace/sample/SampleApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="70" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dstrace-archive/src/main/java/nitinka/dstrace/archive/ElasticSearchEventArchiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="26" selection-start="1490" selection-end="1490" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dstrace-publisher/src/main/java/nitinka/dstrace/Tracer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="74" selection-start="2767" selection-end="2767" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/util/ResponseBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="27" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/DsTraceConsoleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/resource/EventResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="39" selection-start="1836" selection-end="1836" vertical-scroll-proportion="0.0">
+        <state line="41" column="89" selection-start="2121" selection-end="2121" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/fetch/AbstractFetchClient.java">
+    <entry file="file://$PROJECT_DIR$/dstrace-archive/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="108" selection-start="1509" selection-end="1509" vertical-scroll-proportion="0.0">
+        <state line="11" column="18" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dstrace-console/src/main/java/nitinka/dstrace/fetch/ElasticSearchFetchClient.java">
+    <entry file="file://$PROJECT_DIR$/dstrace-console/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="12" selection-start="3154" selection-end="3154" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#3038#3045#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/0.90.6/elasticsearch-0.90.6.jar!/org/elasticsearch/client/Client.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="171" selection-end="171" vertical-scroll-proportion="0.11574074">
+        <state line="11" column="18" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sample-dropwizard-app/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="18" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample-restexpress-app/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="18" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="18" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dstrace-publisher/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="18" selection-start="552" selection-end="552" vertical-scroll-proportion="0.2530675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>D-S-Trace</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: asm:asm:3.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="se.expertsystem.intellij.aop.aspectj.AspectJProjectComponent">
+    <setting name="isActivated" value="true" />
+    <aspect className="nitinka.dstrace.AspectExample" enabled="true">file:$PROJECT_DIR$/dstrace-console/target/classes/nitinka/dstrace/AspectExample.class</aspect>
+    <aspect className="nitinka.dstrace.JerseyPathInterceptor" enabled="true">file:$PROJECT_DIR$/dstrace-console/target/classes/nitinka/dstrace/JerseyPathInterceptor.class</aspect>
+    <aspect className="org.aspectj.ajdt.internal.compiler.CompilerAdapter" enabled="true">jar://file:/home/nitinka/.m2/repository/org/aspectj/aspectjtools/1.6.2/aspectjtools-1.6.2.jar!/org/aspectj/ajdt/internal/compiler/CompilerAdapter.class</aspect>
+    <aspect className="org.aspectj.ajdt.internal.compiler.lookup.AnonymousClassPublisher" enabled="true">jar://file:/home/nitinka/.m2/repository/org/aspectj/aspectjtools/1.6.2/aspectjtools-1.6.2.jar!/org/aspectj/ajdt/internal/compiler/lookup/AnonymousClassPublisher.class</aspect>
+    <aspect className="org.aspectj.ajdt.internal.compiler.lookup.OwningClassSupportForFieldBindings" enabled="true">jar://file:/home/nitinka/.m2/repository/org/aspectj/aspectjtools/1.6.2/aspectjtools-1.6.2.jar!/org/aspectj/ajdt/internal/compiler/lookup/OwningClassSupportForFieldBindings.class</aspect>
+    <aspect className="org.aspectj.ajdt.internal.compiler.lookup.OwningClassSupportForMethodBindings" enabled="true">jar://file:/home/nitinka/.m2/repository/org/aspectj/aspectjtools/1.6.2/aspectjtools-1.6.2.jar!/org/aspectj/ajdt/internal/compiler/lookup/OwningClassSupportForMethodBindings.class</aspect>
+    <aspect className="org.aspectj.ajdt.internal.compiler.lookup.WarnOnSwallowedException" enabled="true">jar://file:/home/nitinka/.m2/repository/org/aspectj/aspectjtools/1.6.2/aspectjtools-1.6.2.jar!/org/aspectj/ajdt/internal/compiler/lookup/WarnOnSwallowedException.class</aspect>
+    <aspect className="org.aspectj.ajdt.internal.compiler.parser.AllowAssertAndEnumAsIdentifierTokensInPointcutExpressions" enabled="true">jar://file:/home/nitinka/.m2/repository/org/aspectj/aspectjtools/1.6.2/aspectjtools-1.6.2.jar!/org/aspectj/ajdt/internal/compiler/parser/AllowAssertAndEnumAsIdentifierTokensInPointcutExpressions.class</aspect>
   </component>
 </project>
 

@@ -5,11 +5,11 @@
     <parent>
         <artifactId>D-S-Trace</artifactId>
         <groupId>nitinka.dstrace</groupId>
-        <version>0.0.1</version>
+        <version>0.0.3</version>
     </parent>
     <groupId>nitinka.dstrace</groupId>
     <artifactId>dstrace-console</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.3</version>
     <name>dstrace-console</name>
     <url>http://maven.apache.org</url>
     <repositories>
@@ -63,9 +63,18 @@
             <version>0.90.6</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.flipkart.tracer</groupId>
+            <artifactId>tracer-client</artifactId>
+            <version>0.0.4</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>aspectj-maven-plugin</artifactId>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>

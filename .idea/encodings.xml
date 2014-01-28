@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/dstrace-archive" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dstrace-console" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dstrace-publisher" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sample-dropwizard-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sample-restexpress-app" charset="UTF-8" />
   </component>
 </project>
 

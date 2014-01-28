@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/dstrace-archive/dstrace-archive.iml" filepath="$PROJECT_DIR$/dstrace-archive/dstrace-archive.iml" />
       <module fileurl="file://$PROJECT_DIR$/dstrace-console/dstrace-console.iml" filepath="$PROJECT_DIR$/dstrace-console/dstrace-console.iml" />
       <module fileurl="file://$PROJECT_DIR$/dstrace-publisher/dstrace-publisher.iml" filepath="$PROJECT_DIR$/dstrace-publisher/dstrace-publisher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample-dropwizard-app/sample-dropwizard-app.iml" filepath="$PROJECT_DIR$/sample-dropwizard-app/sample-dropwizard-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample-restexpress-app/sample-restexpress-app.iml" filepath="$PROJECT_DIR$/sample-restexpress-app/sample-restexpress-app.iml" />
     </modules>
   </component>
 </project>

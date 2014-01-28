@@ -1,0 +1,19 @@
+{
+  "enabled" : true,
+  "host" : "localhost",
+  "businessUnit" : "bu1",
+  "application" : "app1",
+  "samplePercentage" : 100,
+  "eventQueueSize" : 100000,
+  "publishConfiguration" : {
+    "eventPublishDelay" : 5000,
+    "eventPublishSize" : 100,
+    "enqueueFailedMessages" : false,
+    "publisherClass" : "nitinka.dstrace.publish.RedisPublisherImpl",
+    "publisherConfig" : {
+      "redisHost" : "localhost",
+      "redisPort" : 6379,
+      "redisChannel" : "tracer-event-channel"
+    }
+  }
+}

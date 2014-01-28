@@ -25,13 +25,17 @@
         <module name="dstrace-archive" />
         <module name="dstrace-console" />
         <module name="dstrace-publisher" />
+        <module name="sample-dropwizard-app" />
+        <module name="sample-restexpress-app" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.6">
       <module name="D-S-Trace" target="1.6" />
       <module name="dstrace-archive" target="1.6" />
       <module name="dstrace-console" target="1.6" />
       <module name="dstrace-publisher" target="1.6" />
+      <module name="sample-dropwizard-app" target="1.6" />
+      <module name="sample-restexpress-app" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

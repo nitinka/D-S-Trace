@@ -4,7 +4,7 @@
 
     <groupId>nitinka.dstrace</groupId>
     <artifactId>D-S-Trace</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.3</version>
     <packaging>pom</packaging>
 
     <name>D-S-Trace</name>
@@ -20,6 +20,8 @@
         <module>dstrace-publisher</module>
         <module>dstrace-archive</module>
         <module>dstrace-console</module>
+        <module>sample-dropwizard-app</module>
+        <module>sample-restexpress-app</module>
     </modules>
     <build>
         <pluginManagement>

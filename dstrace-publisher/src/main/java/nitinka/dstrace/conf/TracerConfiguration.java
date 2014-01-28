@@ -13,6 +13,7 @@ public class TracerConfiguration {
     private int eventQueueSize = 100000;
 
     private EventPublishConfiguration publishConfiguration;
+    private TracerFilterConfig tracerFilterConfig;
 
     public boolean isEnabled() {
         return enabled;
@@ -74,5 +75,13 @@ public class TracerConfiguration {
     public TracerConfiguration setSamplePercentage(int samplePercentage) {
         this.samplePercentage = samplePercentage;
         return this;
+    }
+
+    public TracerFilterConfig getTracerFilterConfig() {
+        return tracerFilterConfig;
+    }
+
+    public void setTracerFilterConfig(TracerFilterConfig tracerFilterConfig) {
+        this.tracerFilterConfig = tracerFilterConfig;
     }
 }

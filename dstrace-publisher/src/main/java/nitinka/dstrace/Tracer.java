@@ -274,7 +274,7 @@ public class Tracer {
                 threadSampleTrace.remove(Thread.currentThread());
             }
             catch (Exception e) {
-                logger.error("Error in Reseting Current Thread Stack", e);
+                logger.error("Error in Resetting Current Thread Stack", e);
             }
         }
     }
@@ -361,8 +361,8 @@ public class Tracer {
             if(eventsQueue.peek() == null)
                 break;
             events.add(eventsQueue.poll());
+            logger.info("After dequeueing events yet to be published : "+eventsQueue.size());
         }
-        logger.info("After dequeueing events yet to be published : "+eventsQueue.size());
         return events;
     }
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>D-S-Trace</artifactId>
+        <groupId>nitinka.dstrace</groupId>
+        <version>0.0.3</version>
+    </parent>
+    <groupId>nitinka.dstrace</groupId>
+    <artifactId>sample-restexpress-app</artifactId>
+    <version>0.0.3</version>
+    <name>sample-restexpress-app</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.strategicgains</groupId>
+            <artifactId>RestExpress</artifactId>
+            <version>0.9.4</version>
+        </dependency>
+        <dependency>
+            <groupId>nitinka.dstrace.publisher</groupId>
+            <artifactId>dstrace-publisher</artifactId>
+            <version>0.0.2</version>
+        </dependency>
+    </dependencies>
+</project>

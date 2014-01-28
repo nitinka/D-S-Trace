@@ -4,10 +4,13 @@ package nitinka.dstrace;
  * User : NitinK.Agarwal@yahoo.com
  */
 
+import com.flipkart.tracer.filter.jersey.SeedBasedTraceFilter;
+import com.sun.jersey.api.core.ResourceConfig;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.assets.AssetsBundle;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
+import com.yammer.dropwizard.jersey.DropwizardResourceConfig;
 import nitinka.dstrace.config.DsTraceConsoleConfiguration;
 import nitinka.dstrace.resource.EventResource;
 import nitinka.dstrace.fetch.AbstractFetchClient;
@@ -15,6 +18,8 @@ import nitinka.dstrace.resource.SpanResource;
 import nitinka.dstrace.resource.TraceResource;
 import nitinka.jmetrics.JMetric;
 import nitinka.jmetrics.controller.dropwizard.JMetricController;
+
+import java.util.Set;
 
 public class DsTraceConsoleService extends Service<DsTraceConsoleConfiguration> {
 
@@ -34,6 +39,7 @@ public class DsTraceConsoleService extends Service<DsTraceConsoleConfiguration> 
         environment.addResource(new EventResource(AbstractFetchClient.build(configuration.getEventFetchConfig())));
         environment.addResource(new SpanResource(AbstractFetchClient.build(configuration.getEventFetchConfig())));
         environment.addResource(new TraceResource(AbstractFetchClient.build(configuration.getEventFetchConfig())));
+
     }
 
     public static void main(String[] args) throws Exception {

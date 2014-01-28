@@ -1,0 +1,27 @@
+appName: "Sample App"
+
+tracerConfiguration:
+  enabled: true
+  host: "localhost"
+  businessUnit: "bu1"
+  application: "app1"
+  samplePercentage: 100
+  eventQueueSize: 100000
+  publishConfiguration:
+    eventPublishDelay: 5000
+    eventPublishSize: 100
+    enqueueFailedMessages: false
+    publisherClass: "nitinka.dstrace.publish.RedisPublisherImpl"
+    publisherConfig:
+      redisHost: "localhost"
+      redisPort: 6379
+      redisChannel: "tracer-event-channel"
+
+tracerFilterConfig:
+  httpHeaderKeyForTrace: "TRACER_TXN_ID"
+  httpHeaderKeyForParentSpanId: "TRACER_PARENT_SPAN_ID"
+  httpHeaderKeyForTracerSampleRequest: "TRACER_SAMPLE_REQUEST"
+
+http:
+  port: 8888
+  adminPort: 8881
