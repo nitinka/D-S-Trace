@@ -126,7 +126,7 @@ With D-S-Trace I intent to provide distributed tracing platform which can setup 
 <dependency>
     <groupId>nitinka.dstrace.publisher</groupId>
     <artifactId>dstrace-publisher</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
 </dependency> 
 ```
 </pre>
