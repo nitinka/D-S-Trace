@@ -4,7 +4,7 @@
 
     <groupId>nitinka.dstrace</groupId>
     <artifactId>D-S-Trace</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <packaging>pom</packaging>
 
     <name>D-S-Trace</name>

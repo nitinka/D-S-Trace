@@ -5,7 +5,9 @@ public class RedisConsumerConfig {
     private int maxIdle = 1;
     private String redisHost;
     private int redisPort;
-    private String[] channels;
+    private String[] lists;
+
+    private int listReadTimeOutSecs;
 
     public int getConsumerPoolSize() {
         return maxActive;
@@ -39,11 +41,19 @@ public class RedisConsumerConfig {
         this.redisPort = redisPort;
     }
 
-    public String[] getChannels() {
-        return channels;
+    public String[] getLists() {
+        return lists;
     }
 
-    public void setChannels(String[] channels) {
-        this.channels = channels;
+    public void setLists(String[] lists) {
+        this.lists = lists;
+    }
+
+    public int getListReadTimeOutSecs() {
+        return listReadTimeOutSecs;
+    }
+
+    public void setListReadTimeOutSecs(int listReadTimeOutSecs) {
+        this.listReadTimeOutSecs = listReadTimeOutSecs;
     }
 }

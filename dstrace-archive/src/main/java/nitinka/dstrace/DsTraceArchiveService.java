@@ -48,7 +48,7 @@ public class DsTraceArchiveService extends Service<DsTraceArchiveConfiguration> 
 
         Runtime.getRuntime().addShutdownHook(new Thread() {
             public void run() {
-                redisConsumer.stop();
+                redisConsumer.stopIt();
                 archiveService.shutdown();
             }
         });

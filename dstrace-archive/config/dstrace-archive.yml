@@ -8,7 +8,8 @@ jMetricConfig:
 redisConsumerConfig:
   redisHost: "localhost"
   redisPort: 6379
-  channels: ["tracer-event-channel"]
+  lists: ["tracer-event-list"]
+  listReadTimeOutSecs: 2
 
 eventArchiveConfig:
   archiverClass: "nitinka.dstrace.archive.ElasticSearchEventArchiver"

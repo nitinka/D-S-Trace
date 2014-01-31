@@ -23,5 +23,5 @@ tracerFilterConfig:
   httpHeaderKeyForTracerSampleRequest: "TRACER_SAMPLE_REQUEST"
 
 http:
-  port: 8888
-  adminPort: 8881
+  port: 6666
+  adminPort: 6661

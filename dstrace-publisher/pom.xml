@@ -5,11 +5,11 @@
     <parent>
         <artifactId>D-S-Trace</artifactId>
         <groupId>nitinka.dstrace</groupId>
-        <version>0.0.3</version>
+        <version>0.0.4</version>
     </parent>
     <groupId>nitinka.dstrace.publisher</groupId>
     <artifactId>dstrace-publisher</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <name>dstrace-publisher</name>
     <url>http://maven.apache.org</url>
 

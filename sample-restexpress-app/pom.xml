@@ -5,11 +5,11 @@
     <parent>
         <artifactId>D-S-Trace</artifactId>
         <groupId>nitinka.dstrace</groupId>
-        <version>0.0.3</version>
+        <version>0.0.4</version>
     </parent>
     <groupId>nitinka.dstrace</groupId>
     <artifactId>sample-restexpress-app</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <name>sample-restexpress-app</name>
     <url>http://maven.apache.org</url>
     <properties>
@@ -24,7 +24,7 @@
         <dependency>
             <groupId>nitinka.dstrace.publisher</groupId>
             <artifactId>dstrace-publisher</artifactId>
-            <version>0.0.2</version>
+            <version>0.0.4</version>
         </dependency>
     </dependencies>
 </project>

@@ -13,23 +13,24 @@ import java.util.Map;
 public class RedisPublisherImpl extends AbstractEventPublisher {
 
     private Jedis jedis;
-    private String channel;
+    private String list;
 
     public static final String REDIS_HOST = "redisHost";
     public static final String REDIS_PORT = "redisPort";
-    public static final String REDIS_CHANNEL = "redisChannel";
+    public static final String REDIS_LIST = "redisList";
 
     public RedisPublisherImpl(Map<String, Object> config) {
         super(config);
         jedis = new Jedis(config.get(REDIS_HOST).toString(),
                 Integer.parseInt(config.get(REDIS_PORT).toString()));
-        channel = config.get(REDIS_CHANNEL).toString();
+        list = config.get(REDIS_LIST).toString();
     }
 
     @Override
     public void publish(List<Event> events) throws IOException {
         logger.info("Publishing Events :"+objectMapper.writeValueAsString(events));
-        jedis.publish(this.channel, objectMapper.writeValueAsString(events));
+        jedis.rpush(this.list, objectMapper.writeValueAsString(events));
+//        jedis.publish(this.list, objectMapper.writeValueAsString(events));
     }
 
     @Override
