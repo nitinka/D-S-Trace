@@ -6,7 +6,7 @@ With D-S-Trace I intent to provide distributed tracing platform which you can se
 ![Alt Image](https://github.com/nitinka/D-S-Trace/raw/master/images/dstrace.png)
 <br><br>
 <h3>DSTrace consist of 3 components :</h3>
-<b>1) dstrace-publisher</b> : applications should include this library to start sending various events that they want to trace.<br>
+<b>1) dstrace-publisher</b> : applications should include this library to start sending various events that they want to trace. These events are published to Redis or directly to dstrace-archive depending upon configuration. Publishing via Redis makes the deployment more reliable.<br>
 <b>2) dstrace-archive</b> : receive published events (directly from publisher as http call or subscribed message from Redis topic) and archive message to elastic search.<br>
 <b>3) dstrace-console</b> : Set of rest end points and UI to search, relate and visualize distributed traces.<br>
 <hr size=2>
